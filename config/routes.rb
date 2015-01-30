@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   resources :playgrounds
-  #resources :microposts
+  resources :microposts
 
   root to: 'static_pages#home'
 
   post 'sending_email' => 'static_pages#sending_email'
-  #get 'editing/:id' => 'static_pages#editing'
-  #post 'editing/:id' => 'static_pages#create'
+  get 'editing/:id' => 'static_pages#editing'
+  post 'editing/:id' => 'static_pages#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
