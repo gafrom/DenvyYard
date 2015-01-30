@@ -22,7 +22,8 @@ test:
 
 production:
   adapter: postgresql
-  database: myapp_development
-  encoding: unicode
+  encoding: utf8
+  database: denvyyard_production
   pool: 5
-  timeout: 5000
+  username: 
+  password:

@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
 		UserMailer.welcome_email(@customer).deliver
   		redirect_to :back
   	end
+
+  	def xxx
+  	end
 end

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'sending_email' => 'static_pages#sending_email'
   get 'editing/:id' => 'static_pages#editing'
   post 'editing/:id' => 'static_pages#create'
+
+  get 'xxx' => 'static_pages#xxx'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
