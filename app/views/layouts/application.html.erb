@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title><%= yield(:title).presence || "Denvy Yard playgrounds" %></title>
+  <link rel="shortcut icon", href="/assets/icons/favicon.ico" >
+
+  
+
+ 
+
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+
+<body>
+
+<div id="bewitching_box" class="backdrop">
+	<div class="detailed_picture_button close_btn"></div>
+	
+	<div class="backdrop_content">
+		<p class="backdrop_text" style="font-size: 130%;">Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.</p>
+
+		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email')) do %>
+		  <input id="customer_first_name" name="customer[first_name]" type="text" placeholder="Ваше имя" class="backdrop_input"/>
+		  <input id="customer_phone_number" name="customer[phone_number]" type="text"  placeholder="Телефон" class="backdrop_input"/>
+		  <input name="commit" type="submit" value="Ok" class="backdrop_btn"/>
+		<% end %>
+		<p class="backdrop_text">Мы не передаём номера телефонов третьим лицам.</p>
+	</div>
+</div>
+
+
+<%= yield %>
+
+<%# debug(params) %>
+
+<footer>
+	<p>Copyright © 2015 Denvy Yard playgrounds and surfaces.</p>
+</footer>
+
+</body>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/assets/jquery.inputmask.js" type="text/javascript"></script>
+<script>
+
+//=START================================================== jQuery ===============================================================================
+  $(function(){
+	// START--------------------------------------------------1.1
+    $("#link1").click(function(){
+      var offset = $("#part1").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-60
+      });
+    });
+    // END----------------------------------------------------1.1
+    // START--------------------------------------------------1.2
+    $("#link2").click(function(){
+      var offset = $("#part2").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-60
+      });
+    });
+    // END----------------------------------------------------1.2
+    // START--------------------------------------------------1.3
+    $("#link3").click(function(){
+      var offset = $("#part3").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-60
+      });
+    });
+    // END----------------------------------------------------1.3
+    // START--------------------------------------------------1.4
+    $("#link4").click(function(){
+      var offset = $("#part4").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-60
+      });
+    });
+    // END----------------------------------------------------1.4
+    // START--------------------------------------------------2.1
+    $("#index_link1").click(function(){
+      var offset = $("#index_part1").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-80
+      });
+    });
+    // END----------------------------------------------------2.1
+    // START--------------------------------------------------2.2
+    $("#index_link2").click(function(){
+      var offset = $("#index_part2").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-80
+      });
+    });
+    // END----------------------------------------------------2.2
+    // START--------------------------------------------------2.3
+    $("#index_link3").click(function(){
+      var offset = $("#index_part3").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-80
+      });
+    });
+    // END----------------------------------------------------2.3
+    // START--------------------------------------------------2.4ref
+    $(".intext_ref").click(function(){
+      var offset = $("#index_part1").offset();
+      $('html, body').animate({
+        scrollTop: offset.top-80
+      });
+    });
+    // END----------------------------------------------------2.4ref
+    // START--------------------------------------------------3
+    $(document).ready(function(){
+      $('#customer_phone_number').inputmask("+7 (999) 999-99-99");  //static mask
+      var pos = "<%= params[:position] %>"
+      if (pos == "materials") { $("#link3").click();};
+      if (pos == "prices") { $("#link4").click();};
+      
+    });
+    // END----------------------------------------------------3
+
+    // START--------------------------------------------------4.1
+    $(".preview_image").click(function(){
+      var loc = "/assets/"+$(this).attr("name")+"/detailed/"+$(this).attr("id")+".jpg";
+      $('#detailed_picture').attr("src",loc);
+      $('.content,header,.sider_show').toggleClass("blurred");
+      $('#detailed_picture_box').toggleClass("enabled");
+    });
+    // END----------------------------------------------------4.1
+    // START--------------------------------------------------4.2
+    $(".prev_btn").click(function(){
+      var loc = $("#detailed_picture").attr("src");
+      var n = parseInt(loc.substring(loc.length-5,loc.length-4));
+      var new_n = 0;
+      n>1? new_n = n - 1 : new_n = 9;
+      var newloc = loc.substring(0,loc.length-5)+new_n+".jpg";
+      $('#detailed_picture').attr("src",newloc);
+    });
+    // END----------------------------------------------------4.2
+    // START--------------------------------------------------4.3
+    $(".next_btn,#detailed_picture").click(function(){
+      var loc = $("#detailed_picture").attr("src");
+      var n = parseInt(loc.substring(loc.length-5,loc.length-4));
+      var new_n = 0;
+      n<9? new_n = n + 1 : new_n = 1;
+      var newloc = loc.substring(0,loc.length-5)+new_n+".jpg";
+      $('#detailed_picture').attr("src",newloc);
+    });
+    // END----------------------------------------------------4.3
+    // START--------------------------------------------------4.X
+    $(".close_btn").click(function(){
+      $('.content,header,.sider_show,.sider_index,.index_content').removeClass("blurred");
+      $('.backdrop').removeClass("enabled");
+    });
+    // END----------------------------------------------------4.X
+
+    // START--------------------------------------------------5.1
+    $("#return_call_btn").click(function(){
+      $('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
+      $('#bewitching_box').toggleClass("enabled");
+    });
+    // END----------------------------------------------------5.1
+});//=END================================================== jQuery ===============================================================================
+</script>
+
+</html>

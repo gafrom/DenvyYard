@@ -1,0 +1,239 @@
+<% provide(:title, @playground.name_RU) %>
+
+<div id="detailed_picture_box" class="backdrop">
+	<%= image_tag("#", id: "detailed_picture") %>
+	<div class="detailed_picture_button close_btn"></div>
+	<div class="detailed_picture_button prev_btn"></div>
+	<div class="detailed_picture_button next_btn"></div>
+</div>
+
+
+
+<header>
+	<div class="left_header_box">
+		<h2 style="display:inline;"><%= link_to 'Denvy Yard playgrounds', root_path %></h2>
+		<h3 style="display:inline;"> . <%= link_to 'Детские игровые площадки', playgrounds_path %> . <%= @playground.name_RU %></h3>
+	</div>
+	<div id="return_call_btn">Обратный звонок</div>
+	
+	<div class="catchy_phone">
+		<p style="margin:0;">
+			<span class="f_phone">в Москве </span><span style="font-size: 120%;">+7 (499) 231-54-80</span>
+		</p>
+	</div>
+</header>
+
+<div class="sider_show" style="background-image: url(/assets/<%= @playground.name %>/catchy.jpg);">
+	<div class="infront_sider">
+	<%= content_tag(:div, content_tag(:p, "Концепция", class: "p_side_link"), class: "side_link", id: "link1") %>
+	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link"), class: "side_link", id: "link2") %>
+	<%= content_tag(:div, content_tag(:p, "Материалы", class: "p_side_link"), class: "side_link", id: "link3") %>
+	<%= content_tag(:div, content_tag(:p, "Комплектации и цены", class: "p_side_link"), class: "side_link", id: "link4") %>
+</div>
+
+</div>
+
+<div class="content">
+	<div id="part1">
+
+		<div class="heading_box">
+			<h2 class="playground_pre_header">Детская игровая площадка</h2>
+			<h2 class="playground_header"><%= @playground.name_RU %></h2>
+			<h2 class="playground_post_header grey_pen">для парков, жилых комплексов, усадеб</h2>
+		</div>
+		<div class="capturing_box">
+			<h2 class="">Европейский дизайн</h2>
+			<p class="notes">Сценические площадки премиум сегмента подчеркнут индивидуальность жилого комплекса, парка или усадьбы</p>
+			<h2 class="">Безопасность</h2>
+			<p class="notes">Соответствие европейскому стандарту безопасности детских игровых площадок EN 1176:2008, (аналог в РФ СТБ 1176-2006)</p>
+			<h2 class="">Экологичность</h2>
+			<p class="notes" id="details">Все детали изготовлены из массива хвойного дерева и болтов</p>
+		</div>
+		<div class="catchy_image" style="background-image: url(/assets/<%= @playground.name %>/catchy.jpg);"></div>
+
+		<div class="teeth_flipped"></div>
+		<div ></div>
+	</div>
+	<div id="part2">
+		<div class="teeth"></div>	
+		<h2 class="adj">Характеристики и описание</h2> 
+		<div class="left_box">
+			<div style="float: left; margin: -8px 20px;">
+				<p style="font-size: 110%; width: 400px; margin: 0 10px;">Реалистичность сюжета вызывает здоровый страх у ребёнка, как и в реальном мире, только в безопасной среде.<br>Застрявший в айсберге Корабль сильно <b>накренён</b>, и имеет <b>2 больших пробоины</b>, <b>3 каюты</b>, интригуя детей и взрослых, удивляя своей реальностью.</p>
+			</div>
+			<table class="summary_table">
+				<tr>
+					<td>Размеры игровой зоны</td>
+					<td class="ital"><%= @playground.text1 %></td>
+				</tr>
+				<tr>
+					<td>Категория</td>
+					<td class="ital"><%= @playground.text2 %></td>
+				</tr>
+				<tr>
+					<td>Вместимость</td>
+					<td class="ital"><%= @playground.text3 %></td>
+				</tr>
+				<tr>
+					<td>Срок поставки</td>
+					<td class="ital"><%= @playground.text4 %></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="preview_images_box">
+			<% 9.times do | d | %>
+				<%= image_tag(@playground.name+"/preview/preview_#{d+1}.jpg", class: "preview_image", id: "detailed_#{d+1}", name: @playground.name) %>
+			<% end %>
+		</div>
+
+		<div class="description">
+			<ol>
+				<% @playground.microposts.each do | d | %>
+					<li><%= d.header %></li>
+					<p><%= d.content.html_safe %></p>
+				<% end %>
+			</ol>
+		</div>
+		<%= image_tag(@playground.name+"/layout.png", class: "layout_image") %>
+		<div class="teeth_flipped" id="materials"></div>
+	</div>
+	
+
+	<div id="part3">
+		<h2 class="adj">Материалы, из которых мы делаем площадки</h2>
+		<div class="description2">
+			<ul>
+				<li>
+					
+					<div class="d_box">
+						<div class="stick"></div>
+						<h3>Основные материалы</h3>
+						<p>Дерево хвойной породы, клеёная фанера из хвойного дерева и нержавеющие болты</p>
+					</div>
+				</li>
+				<li>
+					
+					<div class="d_box">
+						<div class="stick"></div>
+						<h3>Поверхность горок</h3>
+						<p>Изготовлена из нержавеющей стали. А значит при использовании не образует статического электричества - не бьёт током детей и родителей. Кромки завальцованы. Гладкая ровная поверхность на долгие годы</p>
+					</div>
+				</li>
+				<li>
+					<div class="d_box">
+						<div class="stick"></div>
+						<h3>Постоянный контакт с грунтом</h3>
+						<p>Массив сибирской лиственницы или нержавеющая сталь</p>
+					</div>
+				</li>
+				<li>
+					<div class="d_box">
+						<div class="stick"></div>
+						<h3>Краска</h3>
+						<p>на водной основе Flügger Wood Tex, производство Германия</p>
+					</div>
+				</li>
+				<li>
+					<div class="d_box">
+						<div class="stick"></div>
+						<h3>Срок службы площадок</h3>
+						<p id="prices">15 лет</p>
+					</div>
+				</li>
+			</ul>	
+		</div>
+		<div style="display: inline-block; margin-bottom: -10px; border-right: 2px solid rgb(207, 207, 207); padding-right: 10px;">
+			<%= image_tag("materials_1.jpg", style: "display: block; margin-bottom: 3px;") %>
+			<%= image_tag("materials_2.jpg", style: "display: block;") %>
+		</div>
+	</div>
+
+
+	<div id="part4">
+		<div class="teeth"></div>	
+		<h2 class="adj">Комплектации и цены</h2>
+		
+		<div class="option_box">
+			<h2>Список опций</h2>
+			<p style="border-bottom: 2px solid; margin: 0 0 2em 0; padding-left: 50px;">Может быть изменён по согласованию</p>
+			<table class="options_table">
+				<tr><td></td><td class="option_bullet_column">Базовая</td><td class="option_bullet_column">Полная</td></tr>
+				<tr>
+					<td>
+						<h3>Дренажная система</h3>
+						<p>Площадка без луж сразу после дождя</p>
+					</td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-no") %></td>
+				</tr>
+				<% @playground.options.each do | op | %>
+				<tr style="<%= "border-color: rgb(230, 230, 230);" if op.header2 != nil and op.header2 != "nope" %><%# BASIC OPTION %>">
+					<td>
+						<h3><%= op.header %></h3>
+						<p><%= op.content.html_safe %></p>
+					</td>
+					<td class="option_bullet_column"><%= if op.header2 == nil then content_tag(:div, "", class: "bullet-icon bul-ok") else content_tag(:div, "", class: "bullet-icon bul-no") end %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<% if op.header2 != nil and op.header2 != "nope" then %> <%# BASIC OPTION %>
+					<tr>
+						<td>
+							<h3 style="color: rgb(186, 186, 186);"><%= op.header2 %></h3>
+							<p style="color: rgb(186, 186, 186);"><%= op.content2.html_safe %></p>
+						</td>
+						<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+						<td class="option_bullet_column"></td> <!-- N/A option -->
+					</tr>
+				<% end %>
+				<% end %>
+				<tr>
+					<td>
+						<h3>Доставка и установка</h3>
+						<p>В пределах города Москвы и ближнем подмосковье мы бесплатно привезём и установим игровую площадку.<br>Команда Denvy Yard произведёт экскавацию грунта на объекте, установит фундамент и смонтирует элементы площадки.<br>Земле-ройные работы, а также бетонирование мы осуществляем при помощи местных субподрядчиков - третьих лиц.</p>
+					</td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Наполнение песочницы песком</h3>
+						<p>В стоимость входит одноразовое наполнение песочной зоны пляжным песком высокого качества без камней.</p>
+					</td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Установка временных ограждений</h3>
+						<p>В стоимость входит установка временных ограждений на объекте до момента завершения установки площадки и игрового покрытия.<br>Данные меры необходимы, чтобы уберечь детей от возможных травм, полученных на игровой площадке при незаконченной установке.</p>
+					</td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				
+				<%# EMPTY row %>
+				<tr  style="border-bottom: 2px solid rgb(245, 101, 45);"><td style="padding-bottom: 30px;"></td><td></td><td></td></tr>
+				<%# EMPTY row %>
+
+				<tr style="border-color: rgb(240, 240, 240); "> <%# price %>
+					<td>
+						<h3 style="color: rgb(36, 36, 36);">Цена без покрытия игровой зоны*, тысяч рублей</h3>
+					</td>
+					<td class="option_bullet_column" style="color: black;"><%= @playground.min_price %>. -</td>
+					<td class="option_bullet_column" style="color: black;"><%= @playground.price %>. -</td>
+				</tr><%# price %>
+			</table>
+			<p style="color: rgb(186, 186, 186);"><br>* Указанная цена не включает стоимость игрового покрытия.<br><span style="font-size: 85%; font-style: normal;">Мы поможем Вам сделать выбор покрытия и бесплатно выступим посредником, для удобства сотрудничества «в одно окно».<br>Наши партнёры это лидеры рынка, компании, качество работы которых проверено годами.</span></p>
+			<ul>
+				<li class="drainage">
+					
+				</li>
+				
+				<li class="bundle">
+					
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

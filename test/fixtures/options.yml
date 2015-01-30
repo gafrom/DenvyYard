@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  header: MyText
+  content: MyText
+  header2: MyText
+  content2: MyText
+  playground_id: 
+
+two:
+  header: MyText
+  content: MyText
+  header2: MyText
+  content2: MyText
+  playground_id: 
