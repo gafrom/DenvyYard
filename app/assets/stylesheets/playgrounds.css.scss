@@ -321,7 +321,7 @@ footer {
 	position: relative;
 	padding-bottom: 10px;
 	padding-top: 1px;
-	background-image: url(/assets/bckgr1.png);
+	background-image: image_path(/assets/bckgr1.png);
 	border-width: 0;
 	border-style: solid;
 	border-color: #DADADA;
@@ -351,7 +351,7 @@ footer {
 
 
 .teeth {
-	background-image: url(/assets/teeth_lilac.png);
+	background-image: image_path(/assets/teeth_lilac.png);
 	position: absolute;
 	top: 0;
 	height: 6px;
@@ -361,7 +361,7 @@ footer {
 }
 
 .teeth_flipped {
-	background-image: url(/assets/teeth_lilac.png);
+	background-image: image_path(/assets/teeth_lilac.png);
 	position: absolute;
 	bottom: -2px;
 	height: 6px;
@@ -450,7 +450,7 @@ footer {
 }
 
 .f_phone {
-	background-image: url(/assets/phone.png);
+	background-image: image_path(/assets/phone.png);
 	padding: 0 5px 0 15px;
 	background-repeat: no-repeat;
 	background-position: 0px 1px;
@@ -492,7 +492,7 @@ footer {
 .new_idea {
 	padding: 240px 384px 0 0;
 	background-color: rgba(167, 167, 167, 0.26);
-	background-image: url(/assets/plus_white.png);
+	background-image: image_path(/assets/plus_white.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -534,7 +534,7 @@ footer {
 	}
 	.bullet-icon {
 		display: inline-block;
-		background-image: url(/assets/icons/bullets.png);
+		background-image: image_path(/assets/icons/bullets.png);
 		background-repeat: no-repeat;
 		width: 14px;
 		height: 11px;
@@ -557,10 +557,10 @@ footer {
 
 
 .drainage{
-	background-image: url(/assets/icons/drainage.png);
+	background-image: image_path(/assets/icons/drainage.png);
 }
 .bundle {
-	background-image: url(/assets/icons/box.png);
+	background-image: image_path(/assets/icons/box.png);
 }
 
 .home_links {
@@ -576,20 +576,20 @@ footer {
 }
 
 .iruler {
-	background-image: url(/assets/icons/r.png);
+	background-image: image_path(/assets/icons/r.png);
 
 }
 
 .iage {
-	background-image: url(/assets/icons/a.png);
+	background-image: image_path(/assets/icons/a.png);
 }
 
 .icapacity {
-	background-image: url(/assets/icons/g.png);
+	background-image: image_path(/assets/icons/g.png);
 }
 
 .idelivery {
-	background-image: url(/assets/icons/d.png);
+	background-image: image_path(/assets/icons/d.png);
 }
 
 .icons {
@@ -668,35 +668,35 @@ a.minor_link {
 }
 
 .close_btn {
-	background-image: url(/assets/icons/close_icon_grey.png);
+	background-image: image_path(/assets/icons/close_icon_grey.png);
 	right: 0;
 	top: 0;
 	width: 75px;
 	height: 75px;
 	&:hover {
-		background-image: url(/assets/icons/close_icon.png);
+		background-image: image_path(/assets/icons/close_icon.png);
 	}
 }
 
 .prev_btn {
-	background-image: url(/assets/icons/arrow_left.png);
+	background-image: image_path(/assets/icons/arrow_left.png);
 	left: 0;
 	top: 45%;
 	width: 50px;
 	height: 100px;
 	&:hover {
-		background-image: url(/assets/icons/arrow_left_hovered.png);
+		background-image: image_path(/assets/icons/arrow_left_hovered.png);
 	}
 }
 
 .next_btn {
-	background-image: url(/assets/icons/arrow_right.png);
+	background-image: image_path(/assets/icons/arrow_right.png);
 	right: 0;
 	top: 45%;
 	width: 50px;
 	height: 100px;
 	&:hover {
-		background-image: url(/assets/icons/arrow_right_hovered.png);
+		background-image: image_path(/assets/icons/arrow_right_hovered.png);
 	}
 }
 
@@ -749,7 +749,7 @@ a.minor_link {
 }
 
 .welcome_box {
-	background-image: url(/assets/welcome_logo.png);
+	background-image: image_path(/assets/welcome_logo.png);
 	background-repeat: no-repeat;
 	margin: 0 auto;
 	width: 405px;
