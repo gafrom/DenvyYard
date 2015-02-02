@@ -23,7 +23,7 @@
 	</div>
 </header>
 
-<div class="sider_show" style="background-image: url(/assets/<%= @playground.name %>/catchy.jpg);">
+<div class="sider_show" style="background-image: asset-url(<%= @playground.name %>/catchy.jpg);">
 	<div class="infront_sider">
 	<%= content_tag(:div, content_tag(:p, "Концепция", class: "p_side_link"), class: "side_link", id: "link1") %>
 	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link"), class: "side_link", id: "link2") %>
