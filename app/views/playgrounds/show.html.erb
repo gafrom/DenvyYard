@@ -1,7 +1,7 @@
 <% provide(:title, @playground.name_RU) %>
 
-<style media="screen">
-  .sider_show { background-image: url(<%= image_path(@playground.name+'/catchy.jpg') %>); }
+<style media="all">
+  .sider_show, .catchy_image { background-image: url(<%= image_path(@playground.name+'/catchy.jpg') %>); }
 </style>
 
 
@@ -57,7 +57,7 @@
 			<h2 class="">Экологичность</h2>
 			<p class="notes" id="details">Все детали изготовлены из массива хвойного дерева и болтов</p>
 		</div>
-		<div class="catchy_image" style="background-image: url(/assets/<%= @playground.name %>/catchy.jpg);"></div>
+		<div class="catchy_image"></div>
 
 		<div class="teeth_flipped"></div>
 		<div ></div>
