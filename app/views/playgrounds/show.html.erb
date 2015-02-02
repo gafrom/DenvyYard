@@ -1,5 +1,11 @@
 <% provide(:title, @playground.name_RU) %>
 
+<style media="screen">
+  .sider_show { background-image: url(<%= image_path(@playground.name+'/catchy.jpg') %>); }
+</style>
+
+
+
 <div id="detailed_picture_box" class="backdrop">
 	<%= image_tag("#", id: "detailed_picture") %>
 	<div class="detailed_picture_button close_btn"></div>
@@ -23,7 +29,9 @@
 	</div>
 </header>
 
-<div class="sider_show" style="background-image: asset-url(<%= @playground.name %>/catchy.jpg);">
+
+
+<div class="sider_show">
 	<div class="infront_sider">
 	<%= content_tag(:div, content_tag(:p, "Концепция", class: "p_side_link"), class: "side_link", id: "link1") %>
 	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link"), class: "side_link", id: "link2") %>
