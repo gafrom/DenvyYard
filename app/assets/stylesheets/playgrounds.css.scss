@@ -760,3 +760,19 @@ a.minor_link {
 		left: 21%;
 	}
 }
+
+#flash_box {
+	display: none;
+	width: 100%;
+	position: fixed;
+	top: 10%;
+	text-align: center;
+	z-index: 12;
+	p {
+		display: inline-block;
+		padding: 10px 50px;
+		background-color: rgba(128, 128, 128, 0.79);
+		border-radius: 5px;
+		color: white;
+	}
+}

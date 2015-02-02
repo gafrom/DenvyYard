@@ -12,7 +12,7 @@
 
 
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%# javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= csrf_meta_tags %>
 
 </head>
@@ -26,15 +26,16 @@
 	<div class="backdrop_content">
 		<p class="backdrop_text" style="font-size: 130%;">Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.</p>
 
-		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email')) do %>
+		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email'), id: "return_call_form") do %>
 		  <input id="customer_first_name" name="customer[first_name]" type="text" placeholder="Ваше имя" class="backdrop_input"/>
 		  <input id="customer_phone_number" name="customer[phone_number]" type="text"  placeholder="Телефон" class="backdrop_input"/>
-		  <input name="commit" type="submit" value="Ok" class="backdrop_btn"/>
+		  <%= submit_tag(:submit, name: "commit", value: "Ok", class: "backdrop_btn", data: {disable_with: "Sending..."}) %>
+		  <%#input name="commit" type="submit" value="Ok" class="backdrop_btn"/%>
 		<% end %>
 		<p class="backdrop_text">Мы не передаём номера телефонов третьим лицам.</p>
 	</div>
 </div>
-
+<div id="flash_box"><p>Заявка отправлена. Мы перезвоним Вам в ближайшее время.</p></div>
 
 <%= yield %>
 
@@ -47,7 +48,7 @@
 </body>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="/assets/jquery.inputmask.js" type="text/javascript"></script>
+<script src="<%= javascript_path('jquery.inputmask') %>" type="text/javascript"></script>
 <script>
 
 //=START================================================== jQuery ===============================================================================
@@ -118,7 +119,7 @@
     // END----------------------------------------------------2.4ref
     // START--------------------------------------------------3
     $(document).ready(function(){
-      $('#customer_phone_number').inputmask("+7 (999) 999-99-99");  //static mask
+      $('#customer_phone_number').inputmask("+7 (999) 999 99 99");  //static mask
       var pos = "<%= params[:position] %>"
       if (pos == "materials") { $("#link3").click();};
       if (pos == "prices") { $("#link4").click();};
@@ -167,6 +168,20 @@
       $('#bewitching_box').toggleClass("enabled");
     });
     // END----------------------------------------------------5.1
+
+    // START--------------------------------------------------6
+    $("#return_call_form").submit(function(){
+      $('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
+      $('#bewitching_box, #flash_box').toggleClass("enabled");
+      myVAR = setTimeout(flash_away, 2000);
+      function flash_away() {
+      	function complete() {
+		  $('#flash_box').toggleClass("enabled");
+		}
+      	$('#flash_box').fadeOut(400, complete);
+      }
+    });
+    // END----------------------------------------------------6
 });//=END================================================== jQuery ===============================================================================
 </script>
 
