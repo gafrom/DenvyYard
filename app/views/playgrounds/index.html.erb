@@ -48,7 +48,7 @@
 						<li class="icapacity icons tooltip"><hint>Вместимость</hint><span style="font-style: italic;"><%= pg.text3 %></span></li>
 						<li class="idelivery icons tooltip"><hint>Срок поставки</hint><span style="font-style: italic;"><%= pg.text4 %></span></li>
 					</ul>
-					<%= link_to "Материалы", edit_micropost_path(pg), class: "minor_link" %><br> <%#playground_path(pg, position: "materials")%>
+					<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br> <%#edit_micropost_path(pg)%>
 					<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
  				</div>
 	 		</div>
