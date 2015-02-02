@@ -35,7 +35,6 @@
 			<h1 id="index_part1">Детские игровые площадки большого размера</h1>
 			<h2 class="playground_post_header light_pen">Для парков, жилых комплексов, усадеб, придворовых территорий</h2>
 			<% Playground.where(size: "A").each do | pg | %>
-			<%# link_to("edit", edit_micropost_path(pg)) %>
 			<div class="preview_div">
 				<div class="preview_index_box">
 					<%= link_to image_tag(pg.name+"/preview.jpg", class: "preview_image"), playground_path(id: pg.id), class: "", style: "" %>
@@ -49,7 +48,7 @@
 						<li class="icapacity icons tooltip"><hint>Вместимость</hint><span style="font-style: italic;"><%= pg.text3 %></span></li>
 						<li class="idelivery icons tooltip"><hint>Срок поставки</hint><span style="font-style: italic;"><%= pg.text4 %></span></li>
 					</ul>
-					<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br>
+					<%= link_to "Материалы", edit_micropost_path(pg), class: "minor_link" %><br> <%#playground_path(pg, position: "materials")%>
 					<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
  				</div>
 	 		</div>

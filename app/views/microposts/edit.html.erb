@@ -1,4 +1,20 @@
 <h1>Редактирование базы данных</h1>
+
+<h2>Названия площадок</h2>
+<%= form_for @playground do |f| %>
+<%= f.text_field :name_RU, placeholder: "Имя на русском", class: "editing_text_field" %>
+<%= f.text_field :text1, placeholder: "Размер игровой зоны", class: "editing_text_field" %>
+<%= f.text_field :text2, placeholder: "Категория", class: "editing_text_field" %>
+<%= f.text_field :text3, placeholder: "Вместимость", class: "editing_text_field" %>
+<%= f.text_field :text4, placeholder: "Срок поставки", class: "editing_text_field" %>
+<%= f.text_field :price, placeholder: "Цена максимальная", class: "editing_text_field" %>
+<%= f.text_field :min_price, placeholder: "Цена мин", class: "editing_text_field" %>
+<%= f.submit "Update it" %>
+<% end %>
+
+
+
+<h2>ОПИСАНИЕ площадок</h2>
 <p>Создать новую запись</p>
   	<form action=<%= microposts_path %> method="post">
 		<input name="micropost[playground_id]" type="quantity" placeholder="ID" value=<%= params[:id] %> />
