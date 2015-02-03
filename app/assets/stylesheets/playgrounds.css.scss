@@ -47,12 +47,15 @@ header {
 }
 
 footer {
+	width: 100%;
+	z-index: 13;
+	background-color: white;
+	position: absolute;
 	p {
 		color: lightgrey;
-		position: absolute;
-		left: 17%;
-		padding: 50px 0 10px 0;
+		padding: 10px 20px;
 		margin-bottom: 0;
+		display: block;
 	}
 }
 
@@ -568,9 +571,10 @@ footer {
 	color: #e15c4c;
 	padding: 6px 15px;
 	font-size: 90%;
+	border-right: 8px solid rgba(255, 255, 255, 0);
 	&:hover {
 		background: #f7f7f7;
-		border-right: 8px solid #d3e340;
+		border-color: #d3e340;
 		color: #3c9596;
 	}
 }
@@ -668,35 +672,41 @@ a.minor_link {
 }
 
 .close_btn {
-	background-image: asset-url('icons/close_icon_grey.png');
+	background-image: asset-url('icons/close_icon.png');
+	background-position: 0 -75px;
+	background-repeat: no-repeat;
 	right: 0;
 	top: 0;
 	width: 75px;
 	height: 75px;
 	&:hover {
-		background-image: asset-url('icons/close_icon.png');
+		background-position: 0 0;
 	}
 }
 
 .prev_btn {
-	background-image: asset-url('icons/arrow_left.png');
+	background-image: asset-url('icons/arrows.png');
+	background-position: -50px 0;
+	background-repeat: no-repeat;
 	left: 0;
 	top: 45%;
 	width: 50px;
 	height: 100px;
 	&:hover {
-		background-image: asset-url('icons/arrow_left_hovered.png');
+		background-position: 0 0;
 	}
 }
 
 .next_btn {
-	background-image: asset-url('icons/arrow_right.png');
+	background-image: asset-url('icons/arrows.png');
+	background-position: -100px 0;
+	background-repeat: no-repeat;
 	right: 0;
 	top: 45%;
 	width: 50px;
 	height: 100px;
 	&:hover {
-		background-image: asset-url('icons/arrow_right_hovered.png');
+			background-position: -150px 0;
 	}
 }
 
@@ -749,16 +759,23 @@ a.minor_link {
 }
 
 .welcome_box {
-	background-image: asset-url('welcome_logo.png');
-	background-repeat: no-repeat;
+	text-align: center;
 	margin: 0 auto;
-	width: 405px;
-	height: 330px;
-	h1 {
-		top: 310px;
-		position: relative;
-		left: 21%;
+	width: 550px;
+	.link_box {
+		h1 {
+			display: inline-block;
+		}
 	}
+
+	.pic_box {
+		background-image: asset-url('welcome_logo.png');
+		background-repeat: no-repeat;
+		width: 405px;
+		height: 330px;
+		margin: 0 auto;
+	}
+
 }
 
 #flash_box {
@@ -774,5 +791,12 @@ a.minor_link {
 		background-color: rgba(128, 128, 128, 0.79);
 		border-radius: 5px;
 		color: white;
+	}
+}
+
+.disabled_link {
+	&:hover {
+		border-color: grey;
+		color: grey;
 	}
 }
