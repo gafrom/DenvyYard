@@ -1,4 +1,8 @@
 <% provide(:title, @playground.name_RU) %>
+<% @digestrails = Array.new %>
+<% 9.times do | d | %>
+	<% @digestrails.push(image_path(@playground.name+"/detailed/detailed_#{d}.jpg")) %>
+<% end %>
 
 <style media="all">
   .sider_show, .catchy_image { background-image: url(<%= image_path(@playground.name+'/catchy.jpg') %>); }
@@ -91,7 +95,7 @@
 
 		<div class="preview_images_box">
 			<% 9.times do | d | %>
-				<%= image_tag(@playground.name+"/preview/preview_#{d+1}.jpg", class: "preview_image", id: "detailed_#{d+1}", name: @playground.name) %>
+				<%= image_tag(@playground.name+"/preview/preview_#{d}.jpg", class: "preview_image", name: "digestjs[#{d}]") %>
 			<% end %>
 		</div>
 

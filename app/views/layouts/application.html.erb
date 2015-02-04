@@ -78,6 +78,17 @@
 
 //=START================================================== jQuery ===============================================================================
   $(function(){
+
+  	// START--------------------------------------------------0
+  	<% if @digestrails %>
+	  	var digestjs = Array;
+	    <% 9.times do | d | %>
+	    	digestjs[<%= d %>] = "<%= @digestrails[d] %>";
+	    <% end %>
+    <% end %>
+    // START--------------------------------------------------0
+
+
 	// START--------------------------------------------------1.1
     $("#link1").click(function(){
       var offset = $("#part1").offset();
@@ -145,9 +156,11 @@
     // START--------------------------------------------------3
     $(document).ready(function(){
       $('#customer_phone_number').inputmask("+7 (999) 999 99 99");  //static mask
-      var pos = "<%= params[:position] %>"
+      var pos = "<%= params[:position] %>";
       if (pos == "materials") { $("#link3").click();};
       if (pos == "prices") { $("#link4").click();};
+      
+      
 
       <% if flash[:success] %>
     	myVAR = setTimeout(flash_away, 6000);
@@ -164,30 +177,31 @@
 
     // START--------------------------------------------------4.1
     $(".preview_image").click(function(){
-      var loc = "/assets/"+$(this).attr("name")+"/detailed/"+$(this).attr("id")+".jpg";
-      $('#detailed_picture').attr("src",loc);
+      var loc = eval($(this).attr("name"));
+      $('#detailed_picture').attr("src", loc);
+      $('#detailed_picture').attr("name", $(this).attr("name"));
       $('.content,header,.sider_show').toggleClass("blurred");
       $('#detailed_picture_box').toggleClass("enabled");
     });
     // END----------------------------------------------------4.1
     // START--------------------------------------------------4.2
     $(".prev_btn").click(function(){
-      var loc = $("#detailed_picture").attr("src");
-      var n = parseInt(loc.substring(loc.length-5,loc.length-4));
+      var old_name = $("#detailed_picture").attr("name");
+      var n = parseInt(old_name.substring(old_name.length-2,old_name.length-1));
       var new_n = 0;
-      n>1? new_n = n - 1 : new_n = 9;
-      var newloc = loc.substring(0,loc.length-5)+new_n+".jpg";
-      $('#detailed_picture').attr("src",newloc);
+      n>0? new_n = n - 1 : new_n = 8;
+      $('#detailed_picture').attr("src", digestjs[new_n]);
+      $('#detailed_picture').attr("name", "digestjs["+new_n+"]");
     });
     // END----------------------------------------------------4.2
     // START--------------------------------------------------4.3
     $(".next_btn,#detailed_picture").click(function(){
-      var loc = $("#detailed_picture").attr("src");
-      var n = parseInt(loc.substring(loc.length-5,loc.length-4));
+      var old_name = $("#detailed_picture").attr("name");
+      var n = parseInt(old_name.substring(old_name.length-2,old_name.length-1));
       var new_n = 0;
-      n<9? new_n = n + 1 : new_n = 1;
-      var newloc = loc.substring(0,loc.length-5)+new_n+".jpg";
-      $('#detailed_picture').attr("src",newloc);
+      n<8? new_n = n + 1 : new_n = 0;
+      $('#detailed_picture').attr("src", digestjs[new_n]);
+      $('#detailed_picture').attr("name", "digestjs["+new_n+"]");    
     });
     // END----------------------------------------------------4.3
     // START--------------------------------------------------4.X
