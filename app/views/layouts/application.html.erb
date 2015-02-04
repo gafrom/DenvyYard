@@ -5,11 +5,6 @@
   <title><%= yield(:title).presence || "Denvy Yard playgrounds" %></title>
   <link rel="shortcut icon", href="/assets/icons/favicon.ico" >
 
-  
-
- 
-
-
 
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -21,54 +16,29 @@
 <body>
 
 <div style="display: none;">
-	<p>Денви Ярд © 2015 <br>Проектирование, дизайн, производство, продажа, установка игровых детских площадок премиум сегмента из дерева.<br></p>
+	<p>Денви Ярд | Детские площадки и современные экологичные покрытия для игровых зон из древесной щепы © 2015 <br>Проектирование, дизайн, производство, продажа, установка игровых детских площадок премиум сегмента из дерева.<br></p>
 	<p>Copyright © 2015 Denvy Yard playgrounds and surfaces.</p>
 </div>
 
-
-<div id="bewitching_box" class="backdrop">
-	<div class="detailed_picture_button close_btn"></div>
-	
-	<div class="backdrop_content">
-		<p class="backdrop_text" style="font-size: 130%;">Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.</p>
-
-		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email'), id: "return_call_form") do %>
-		  <input id="customer_first_name" name="customer[first_name]" type="text" placeholder="Ваше имя" class="backdrop_input"/>
-		  <input id="customer_phone_number" name="customer[phone_number]" type="text"  placeholder="Телефон" class="backdrop_input"/>
-		  <%= submit_tag(:submit, name: "commit", value: "Ok", class: "backdrop_btn", data: {disable_with: "Sending..."}) %>
-		<% end %>
-		<p class="backdrop_text">Мы не передаём номера телефонов третьим лицам.</p>
-	</div>
-</div>
-<% if flash[:success] %>
-    <div id="flash_box"><p><%= flash[:success] %></p></div>
-<% end %>
-
 <%= yield %>
-
 <%# debug(params) %>
+
+
+
+
 
 <footer>
 	<p>Денви Ярд © 2015 <br>Проектирование, дизайн, производство, продажа, <br>установка игровых детских площадок премиум сегмента из дерева.<br></p>
 	<p>Copyright © 2015 Denvy Yard playgrounds and surfaces.</p>
 </footer>
 
-<div style="display: none;" class="tag">
-	<p>элитные детские площадки из дерева - производство и продажа</p>
-	<p>дизайнерские детские площадки из дерева - производство и продажа</p>
-	<p>тематические детские площадки из дерева - производство и продажа</p>
-	<p>сценические детские площадки из дерева - производство и продажа</p>
-	<p>интересные детские площадки из дерева - производство и продажа</p>
-	<p>детская площадка призрак - производство и продажа</p>
-	<p>детская площадка привидение - производство и продажа</p>
-	<p>детская площадка дом с привидениями - производство и продажа</p>
-	<p>детская площадка экскаватор - производство и продажа</p>
-	<p>детская площадка для дома - производство и продажа</p>
-	<p>детская площадка для дачи - производство и продажа</p>
-	<p>детская площадка во двор - производство и продажа</p>
-	<p>детская площадка для парка - производство и продажа</p>
-	<p>детская площадка для жилого комплекса - производство и продажа</p>
-</div>
+<%= render 'layouts/bewitching' %>
+
+<% if flash[:success] %>
+    <div id="flash_box"><p><%= flash[:success] %></p></div>
+<% end %>
+
+<%= render 'layouts/searchTags' %>
 
 </body>
 
@@ -160,9 +130,7 @@
       if (pos == "materials") { $("#link3").click();};
       if (pos == "prices") { $("#link4").click();};
       
-      
-
-      <% if flash[:success] %>
+	  <% if flash[:success] %>
     	myVAR = setTimeout(flash_away, 6000);
       	function flash_away() {
       	function complete() {
@@ -226,9 +194,21 @@
     });
     // END----------------------------------------------------6
 
-    // START--------------------------------------------------7
-    
-    // END----------------------------------------------------7
+    // START--------------------------------------------------7.1
+    $(".tooltip").mouseenter(function(){
+      $('.hint').remove();
+      var element = this;
+	  delayedID = setTimeout(function delayedPrepend() {
+		$(element).prepend('<div class="hint">'+$(element).attr('hint')+'</div>');
+	  }, 700);
+    });    
+    // END----------------------------------------------------7.1
+    // START--------------------------------------------------7.2
+    $(".tooltip,.hint").mouseleave(function(){
+    	clearTimeout(delayedID);
+    	$('.hint').remove();
+    });    
+    // END----------------------------------------------------7.2
 });//=END================================================== jQuery ===============================================================================
 </script>
 

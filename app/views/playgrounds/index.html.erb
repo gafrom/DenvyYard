@@ -2,17 +2,19 @@
 
 <header>
 	<div class="left_header_box">
-		<h2 style="display:inline;"><%= link_to 'Denvy Yard playgrounds', root_path %></h2>
+		<h2 style="display:inline;"><%= link_to 'Denvy Yard', root_path %></h2>
 		<h3 style="display:inline;"> . Детские игровые площадки - готовые эскизы</h3>
 	</div>
-	<div class="catchy_phone">
-		<p style="margin:0;">
-			<%# <span style="letter-spacing: 0.13em;">Производство <span style="color: rgb(71, 71, 71);">|</span> продажа</span><br>
-			<span style="font-size: 71%; color: rgb(71, 71, 71);">установка игрового оборудования под ключ</span><br>	%>		
-			<span class="f_phone">в Москве </span><span style="font-size: 120%;">+7 (499) 231-54-80</span>
-		</p>
+	<div class="right_header_box">
+		<div class="catchy_phone">
+			<p style="margin:0;">
+				<%# <span style="letter-spacing: 0.13em;">Производство <span style="color: rgb(71, 71, 71);">|</span> продажа</span><br>
+				<span style="font-size: 71%; color: rgb(71, 71, 71);">установка игрового оборудования под ключ</span><br>	%>		
+				<span class="f_phone">в Москве </span><span style="font-size: 120%;">+7 (499) 933-53-30</span>
+			</p>
+		</div>
+		<div id="return_call_btn">Обратный звонок</div>
 	</div>
-	<div id="return_call_btn">Обратный звонок</div>
 </header>
 
 <div class="sider_index">
@@ -37,16 +39,16 @@
 			<% Playground.where(size: "A").each do | pg | %>
 			<div class="preview_div">
 				<div class="preview_index_box">
-					<%= link_to image_tag(pg.name+"/preview.jpg", class: "preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+					<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
 				</div>
 				<div class="preview_description_box">
 					<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
 					<div class="reduce_hover_area"></div>
 					<ul>
-						<li class="iruler icons tooltip"><hint>Размер игровой зоны</hint><span style="font-style: italic;"><%= pg.text1 %></span></li>
-						<li class="iage icons tooltip"><hint>Категория</hint><span style="font-style: italic;"><%= pg.text2 %></span></li>
-						<li class="icapacity icons tooltip"><hint>Вместимость</hint><span style="font-style: italic;"><%= pg.text3 %></span></li>
-						<li class="idelivery icons tooltip"><hint>Срок поставки</hint><span style="font-style: italic;"><%= pg.text4 %></span></li>
+						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;"><%= pg.text1 %></span></li>
+						<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;"><%= pg.text2 %></span></li>
+						<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;"><%= pg.text3 %></span></li>
+						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;"><%= pg.text4 %></span></li>
 					</ul>
 					<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br> <%#edit_micropost_path(pg)%>
 					<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
@@ -67,10 +69,10 @@
 						<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
 						<div class="reduce_hover_area"></div>
 						<ul>
-							<li class="iruler icons tooltip"><hint>Размер игровой зоны</hint><span style="font-style: italic;"><%= pg.text1 %></span></li>
-							<li class="iage icons tooltip"><hint>Категория</hint><span style="font-style: italic;"><%= pg.text2 %></span></li>
-							<li class="icapacity icons tooltip"><hint>Вместимость</hint><span style="font-style: italic;"><%= pg.text3 %></span></li>
-							<li class="idelivery icons tooltip"><hint>Срок поставки</hint><span style="font-style: italic;"><%= pg.text4 %></span></li>
+							<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;"><%= pg.text1 %></span></li>
+							<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;"><%= pg.text2 %></span></li>
+							<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;"><%= pg.text3 %></span></li>
+							<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;"><%= pg.text4 %></span></li>
 						</ul>
 						<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br>
 						<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
@@ -89,10 +91,10 @@
 					<h2><%= link_to "Ваша идея", "#", class: "", style: "" %></h2>
 					<div class="reduce_hover_area"></div>
 					<ul>
-						<li class="iruler icons tooltip"><hint>Размер игровой зоны</hint><span style="font-style: italic;">любой размер</span></li>
-						<li class="iage icons tooltip"><hint>Категория</hint><span style="font-style: italic;">любая возрастная группа или микс</span></li>
-						<li class="icapacity icons tooltip"><hint>Вместимость</hint><span style="font-style: italic;">от 1 ребёнка</span></li>
-						<li class="idelivery icons tooltip"><hint>Срок поставки</hint><span style="font-style: italic;">от 1 недели</span></li>
+						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;">любой размер</span></li>
+						<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;">любая возрастная группа или микс</span></li>
+						<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;">от 1 ребёнка</span></li>
+						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;">от 1 недели</span></li>
 					</ul>
 					<%= link_to "Материалы которые мы используем", playground_path(1, position: "materials"), class: "minor_link" %><br>	
  				</div>

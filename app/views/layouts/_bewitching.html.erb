@@ -1,0 +1,14 @@
+<div id="bewitching_box" class="backdrop">
+	<div class="detailed_picture_button close_btn"></div>
+	
+	<div class="backdrop_content">
+		<p class="backdrop_text" style="font-size: 130%;">Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.</p>
+
+		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email'), id: "return_call_form") do %>
+		  <input id="customer_first_name" name="customer[first_name]" type="text" placeholder="Ваше имя" class="backdrop_input"/>
+		  <input id="customer_phone_number" name="customer[phone_number]" type="text"  placeholder="Телефон" class="backdrop_input"/>
+		  <%= submit_tag(:submit, name: "commit", value: "Ok", class: "backdrop_btn", data: {disable_with: "Sending..."}) %>
+		<% end %>
+		<p class="backdrop_text">Мы не передаём номера телефонов третьим лицам.</p>
+	</div>
+</div>

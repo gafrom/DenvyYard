@@ -30,7 +30,6 @@ header {
 	z-index: 1;
 	position: fixed;
 	height: 50px;
-	padding: 0 10px 0 10px;
 	border-radius: 0 0 2px 2px;
 	border-bottom: solid 1px lightgrey; 
 	width: 100%;
@@ -60,12 +59,13 @@ footer {
 }
 
 .centered {
-	margin: 0 auto;
 	width: 770px;
+	left: 240px;
+	position: relative;
 }
 
 .preview_description_box {
-	max-width: 300px;
+	width: 300px;
 	position: relative;
 	vertical-align: bottom;
 	display: inline-block;
@@ -92,6 +92,7 @@ footer {
 	li {
 		list-style: none;
 		padding: 10px 0 10px 50px;
+		position: relative;
 	}
 }
 
@@ -227,21 +228,8 @@ footer {
 }
 
 .catchy_phone {
-	/*display: inline-block;
-	line-height: normal;
-	right: 0px;
-	position: fixed;
-	margin-right: 49px;
-	font-size: 120%;
-	padding: 8px 17px;
-	background-color: #F5652D;
-	color: white;
-	border-radius: 0 0 2px 2px;*/
 	display: inline-block;
-	line-height: normal;
-	right: 160px;
-	position: fixed;
-	margin: 10px 50px 0 0;
+	white-space: nowrap;
 	font-size: 120%;
 	padding: 2px 17px;
 	color: white;
@@ -251,9 +239,17 @@ footer {
 
 .left_header_box {
 	display: inline-block; 
-	margin: 10px 10px 0px 0;
+	margin: 10px 10px 0px 10px;
 	font-size: 95%;
 	text-shadow: 0 0 1px rgb(212, 212, 212);
+}
+
+.right_header_box {
+	display: inline-block; 
+	margin: 10px 10px 0px 10px;
+	position: absolute;
+	top: 0;
+	right: 1%;
 }
 
 .heading_box {
@@ -428,7 +424,7 @@ footer {
 .preview_index_box {
 	display: inline-block;
 	margin-right: 10px;
-	.preview_image {
+	.index_preview_image {
 	cursor: pointer;
 	&:hover {
 		opacity: 0.85;
@@ -463,16 +459,17 @@ footer {
 }
 
 #return_call_btn {
-	position: fixed;
-	right: 50px;
-	top: 10px;
+	display: inline-block;
+	white-space: nowrap;
 	padding: 5px 13px;
 	background-color: #FFFFFF;
 	z-index: 1;
 	cursor: pointer;
-	color: rgb(112, 112, 112);
+	color: #707070;
 	font-style: italic;
 	border-radius: 2px;
+	position: relative;
+	top: -3px;
 	&:hover {
 		background-color: #EFEFEF;
 		color: black;
@@ -598,28 +595,27 @@ footer {
 
 .icons {
 	background-repeat: no-repeat;
+	width: 36px;
+	height: 36px;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-
-
-
-.icons.tooltip hint {
- 	display:none; 
-}
-
-.icons.tooltip:hover hint {
-	display: inline;
+.hint {
+	display: inline-block;
 	white-space: nowrap;
 	position: absolute;
 	color: #3c9596;
 	opacity: 0.8;
-	right: 294px;
+	right: 45px;
+	top: 6px;
 	max-width: 200px;
 	padding: 2px 6px;
 	text-align: right;
 	background: #f7f7f7;
 	border-right: 4px solid #d3e340;
-	margin: -3px;
 	font-style: italic;
 	font-weight: lighter;
 }
@@ -653,13 +649,16 @@ a.minor_link {
 	z-index: 11;
 	vertical-align: middle;
 	text-align: center;
+	top: 0;
+	left: 0;
 }
 
 .loader {
-  background-image: asset-url('icons/spinner.png');
+  background-image: asset-url('icons/close_icon.png');
   background-repeat: no-repeat;
-  width: 100px;
-  height: 100px;
+  background-position: 0 -150px;
+  width: 75px;
+  height: 75px;
   margin: auto;
   top: 40%;
   position: relative;
@@ -795,7 +794,7 @@ a.minor_link {
 .welcome_box {
 	text-align: center;
 	margin: 0 auto;
-	width: 550px;
+	width: 600px;
 	.link_box {
 		h1 {
 			display: inline-block;
