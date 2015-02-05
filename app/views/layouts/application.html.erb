@@ -21,7 +21,7 @@
 </div>
 
 <%= yield %>
-<%# debug(params) %>
+
 
 
 
@@ -39,9 +39,10 @@
 <% end %>
 
 <%= render 'layouts/searchTags' %>
-
+<%# debug(params) %>
 </body>
 
+<%= render 'layouts/yandexMetrika' %>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="<%= javascript_path('jquery.inputmask') %>" type="text/javascript"></script>
 <script>
