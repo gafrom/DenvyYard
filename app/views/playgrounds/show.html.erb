@@ -1,6 +1,6 @@
 <% provide(:title, @playground.name_RU) %>
 <% @digestrails = Array.new %>
-<% 9.times do | d | %>
+<% @playground.year.times do | d | %>
 	<% @digestrails.push(image_path(@playground.name+"/detailed/detailed_#{d}.jpg")) %>
 <% end %>
 
@@ -59,7 +59,7 @@
 		<h2 class="adj">Характеристики и описание</h2> 
 		<div class="left_box">
 			<div style="float: left; margin: -8px 20px;">
-				<p style="font-size: 110%; width: 400px; margin: 0 10px;">Реалистичность сюжета вызывает здоровый страх у ребёнка, как и в реальном мире, только в безопасной среде.<br>Застрявший в айсберге Корабль сильно <b>накренён</b>, и имеет <b>2 больших пробоины</b>, <b>3 каюты</b>, интригуя детей и взрослых, удивляя своей реальностью.</p>
+				<p style="font-size: 110%; width: 400px; margin: 0 10px;">Реалистичность сюжета вызывает здоровый страх у ребёнка, как и в реальном мире, только в безопасной среде.<br><br>Интригуя детей и взрослых, удивляя своей реальностью.</p>
 			</div>
 			<table class="summary_table">
 				<tr>
@@ -82,7 +82,7 @@
 		</div>
 
 		<div class="preview_images_box">
-			<% 9.times do | d | %>
+			<% @playground.year.times do | d | %>
 				<%= image_tag(@playground.name+"/preview/preview_#{d}.jpg", class: "preview_image", name: "digestjs[#{d}]") %>
 			<% end %>
 		</div>
