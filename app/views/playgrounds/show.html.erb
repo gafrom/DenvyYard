@@ -11,7 +11,7 @@
 
 
 <div id="detailed_picture_box" class="backdrop">
-	<%= image_tag("#", id: "detailed_picture") %>
+	<%= image_tag("", id: "detailed_picture") %>
 	<div class="detailed_picture_button close_btn"></div>
 	<div class="detailed_picture_button prev_btn"></div>
 	<div class="detailed_picture_button next_btn"></div>
@@ -26,9 +26,9 @@
 <div class="sider_show">
 	<div class="infront_sider">
 	<%= content_tag(:div, content_tag(:p, "Концепция", class: "p_side_link"), class: "side_link", id: "link1") %>
-	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link"), class: "side_link", id: "link2") %>
+	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link", style: "top:10%;"), class: "side_link", id: "link2") %>
 	<%= content_tag(:div, content_tag(:p, "Материалы", class: "p_side_link"), class: "side_link", id: "link3") %>
-	<%= content_tag(:div, content_tag(:p, "Комплектации и цены", class: "p_side_link"), class: "side_link", id: "link4") %>
+	<%= content_tag(:div, content_tag(:p, "Комплектации и цены", class: "p_side_link", style: "top:10%;"), class: "side_link", id: "link4") %>
 </div>
 
 </div>

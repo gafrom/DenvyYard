@@ -8,7 +8,8 @@
     <h2>New customer</h2> 
     <p>
       Имя: <%= @customer[:first_name] %><br>
-      Телефон: <%= @customer[:phone_number] %><br><br>
+      Телефон: <%= @customer[:phone_number] %><br>
+      <%= "Сюжет: " + @customer[:idea] if @customer[:idea].present? %><br><br>
     </p>
 
     <h2>perhaps wanna buy your playground!</h2>

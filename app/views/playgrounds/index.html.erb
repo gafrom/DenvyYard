@@ -22,7 +22,7 @@
 		<p class="company_profile">Производство, продажа, дизайн, проектирование, установка сценических площадок премиум сегмента из дерева</p>
 		<%# <p class="company_profile">Дизайн, проектирование, производство, установка, продажа дизайнерских площадок премиум сегмента из дерева</p>%>
 	</div>
-	<%= content_tag(:div, content_tag(:p, "Для парков, жилых комплексов, дворов", class: "p_side_link")+content_tag(:p, "Крупные сценические<br>комплексы с размерами игровой зоны от 10 х 10 метров".html_safe, class: "post_word_side_link"), class: "side_link", id: "index_link1") %>
+	<%= content_tag(:div, content_tag(:p, "Для парков,<br>дворов, жилых<br>комплексов".html_safe, class: "p_side_link")+content_tag(:p, "Крупные сценические<br>комплексы с размерами игровой зоны от 10 х 10 метров".html_safe, class: "post_word_side_link"), class: "side_link", id: "index_link1") %>
 	<%= content_tag(:div, content_tag(:p, "Для дома, дачи", class: "p_side_link")+content_tag(:p, "Игровые площадки небольших размеров", class: "post_word_side_link"), class: "side_link", id: "index_link2") %>
 	<%= content_tag(:div, content_tag(:p, "+ Ваша идея", class: "p_side_link")+content_tag(:p, "Выберите любые элементы из готовых эскизов или расскажите нам о своей идее", class: "post_word_side_link"), class: "side_link", id: "index_link3") %>
 </div>
@@ -45,10 +45,10 @@
 					<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
 					<div class="reduce_hover_area"></div>
 					<ul>
-						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;"><%= pg.text1 %></span></li>
-						<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;"><%= pg.text2 %></span></li>
-						<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;"><%= pg.text3 %></span></li>
-						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;"><%= pg.text4 %></span></li>
+						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
+						<li><span class="iage icons tooltip" hint="Категория"></span><%= pg.text2 %></li>
+						<li><span class="icapacity icons tooltip" hint="Вместимость"></span><%= pg.text3 %></li>
+						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><%= pg.text4 %></li>
 					</ul>
 					<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br> <%#edit_micropost_path(pg)%>
 					<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
@@ -69,10 +69,10 @@
 						<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
 						<div class="reduce_hover_area"></div>
 						<ul>
-							<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;"><%= pg.text1 %></span></li>
-							<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;"><%= pg.text2 %></span></li>
-							<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;"><%= pg.text3 %></span></li>
-							<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;"><%= pg.text4 %></span></li>
+							<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
+							<li><span class="iage icons tooltip" hint="Категория"></span><%= pg.text2 %></li>
+							<li><span class="icapacity icons tooltip" hint="Вместимость"></span><%= pg.text3 %></li>
+							<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><%= pg.text4 %></li>
 						</ul>
 						<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br>
 						<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
@@ -85,16 +85,16 @@
 			<h2 class="playground_post_header light_pen">Тематические многофункциональные детские игровые площадки выполненные в европейском дизайне для современных парков, жилых комплексов, усадеб, посёлков, таунхаусов, домов или дач</h2>
 			<div class="preview_div">   
 				<div class="preview_index_box">
-					<%= link_to content_tag(:div, "", class: "new_idea"), "#", class: "", style: "" %>
+					<%= link_to content_tag(:div, "", class: "new_idea_picture"), "#", class: "new_idea_link" %>
 				</div>
 				<div class="preview_description_box">
-					<h2><%= link_to "Ваша идея", "#", class: "", style: "" %></h2>
+					<h2><%= link_to "Ваша идея", "#", class: "new_idea_link" %></h2>
 					<div class="reduce_hover_area"></div>
 					<ul>
-						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><span style="font-style: italic;">любой размер</span></li>
-						<li><span class="iage icons tooltip" hint="Категория"></span><span style="font-style: italic;">любая возрастная группа или микс</span></li>
-						<li><span class="icapacity icons tooltip" hint="Вместимость"></span><span style="font-style: italic;">от 1 ребёнка</span></li>
-						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><span style="font-style: italic;">от 1 недели</span></li>
+						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span>любой размер</li>
+						<li><span class="iage icons tooltip" hint="Категория"></span>для детей любого возраста</li>
+						<li><span class="icapacity icons tooltip" hint="Вместимость"></span>от 1 ребёнка</li>
+						<li><span class="idelivery icons tooltip" hint="Срок поставки"></span>от 1 недели</li>
 					</ul>
 					<%= link_to "Материалы которые мы используем", playground_path(1, position: "materials"), class: "minor_link" %><br>	
  				</div>

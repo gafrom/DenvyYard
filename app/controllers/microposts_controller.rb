@@ -31,7 +31,6 @@ class MicropostsController < ApplicationController
 
   private
   def ad_params   
-
     	params.require(:micropost).permit(:playground_id, :header, :content)
  	end
 end

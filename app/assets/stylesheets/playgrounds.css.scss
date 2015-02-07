@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	font-family: Calibri, verdana;
+	font-family: 'latolight', verdana;
 	background-color: white;
 	margin: 0;		
 }
@@ -22,15 +22,26 @@ body {
 }
 
 @font-face {
-    font-family: 'oxygen';
-    src: asset-url('fonts/oxygen.eot');
-    src: asset-url('fonts/oxygen.eot?#iefix') format('embedded-opentype'),
-         asset-url('fonts/oxygen.woff2') format('woff2'),
-         asset-url('fonts/oxygen.woff') format('woff'),
-         asset-url('fonts/oxygen.ttf') format('truetype'),
-         asset-url('fonts/oxygen.svg#oxygenregular') format('svg');
+    font-family: 'latolight';
+    src: asset-url('fonts/lato-light-webfont.eot');
+    src: asset-url('fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('fonts/lato-light-webfont.woff2') format('woff2'),
+         asset-url('fonts/lato-light-webfont.woff') format('woff'),
+         asset-url('fonts/lato-light-webfont.ttf') format('truetype'),
+         asset-url('fonts/lato-light-webfont.svg#latolight') format('svg');
     font-weight: normal;
     font-style: normal;
+}
+@font-face {
+	font-family: 'latolight';
+    src: asset-url('fonts/lato-lightitalic-webfont.eot');
+    src: asset-url('fonts/lato-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         asset-url('fonts/lato-lightitalic-webfont.woff2') format('woff2'),
+         asset-url('fonts/lato-lightitalic-webfont.woff') format('woff'),
+         asset-url('fonts/lato-lightitalic-webfont.ttf') format('truetype'),
+         asset-url('fonts/lato-lightitalic-webfont.svg#latolight_italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
 }
 
 h1, h2, h3 {
@@ -102,7 +113,7 @@ footer {
 	}
 	li {
 		list-style: none;
-		padding: 10px 0 10px 50px;
+		padding: 9px 0 9px 50px;
 		position: relative;
 	}
 }
@@ -156,7 +167,7 @@ footer {
 }
 
 .sider_show {
-	width: 200px;
+	width: 180px;
 	position: fixed;
 	top: 50px;
 	height: 100%;
@@ -197,7 +208,7 @@ footer {
 
 .content {
 	position: relative;
-	margin-left: 200px;
+	margin-left: 180px;
 	top: 50px;
 	padding-bottom: 50px;
 	min-width: 1000px;
@@ -242,7 +253,7 @@ footer {
 	display: inline-block;
 	white-space: nowrap;
 	font-size: 120%;
-	padding: 2px 17px;
+	padding: 2px 5px;
 	color: white;
 	border-radius: 3px;
 	font-weight: 100;
@@ -257,7 +268,7 @@ footer {
 
 .right_header_box {
 	display: inline-block; 
-	margin: 10px 10px 0px 10px;
+	margin: 10px 0 0px 10px;
 	position: absolute;
 	top: 0;
 	right: 1%;
@@ -302,11 +313,12 @@ footer {
 }
 
 .playground_header {
+	font-family: 'ralewaylight';
 	text-transform: uppercase;
 	font-size: 250%;
 	font-weight: lighter;
 	margin: 0;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.14em;
 	text-shadow: 0 0 2px whitesmoke;
 	width: 480px;
 }
@@ -390,7 +402,7 @@ footer {
 .catchy_image {
 	display: block;
 	max-width: 100%;
-	background-position: -200px 0;
+	background-position: -180px 0;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 638px;
@@ -465,8 +477,12 @@ footer {
 	background-repeat: no-repeat;
 	background-position: 0px 1px;
 	font-size: 80%;
-	color: rgb(71, 71, 71);
+	color: #F3F3F3;
 	letter-spacing: -0.03em;
+}
+
+#return_call_form {
+	display: inline-block;
 }
 
 #return_call_btn {
@@ -500,7 +516,7 @@ footer {
 	color: black;
 }
 
-.new_idea {
+.new_idea_picture {
 	padding: 240px 384px 0 0;
 	background-color: rgba(167, 167, 167, 0.26);
 	background-image: asset-url('plus_white.png');
@@ -640,8 +656,7 @@ footer {
 
 
 a.minor_link {
-	font-style: italic;
-	color: rgb(178, 178, 178);
+	color: #929292;
 }
 
 .post_word_side_link {
@@ -773,7 +788,7 @@ a.minor_link {
 
 .backdrop_content {
 	position: relative;
-	top: 30%;
+	display: inline-block;
 	
 	.backdrop_input {
 		font-family: 'ralewaylight', Calibri, Verdana;
@@ -800,11 +815,12 @@ a.minor_link {
 		margin: 0;
 	}
 	.backdrop_text {
+		max-width: 600px;
 		color: lightgrey;
 		text-align: left;
-		position: relative;
-		left: 28.4%;
-		font-family: 'ralewaylight', Calibri, Verdana;
+		font-family: 'ralewaylight', Verdana;
+		font-size: 130%;
+		margin-left: 30px;
 	}
 }
 

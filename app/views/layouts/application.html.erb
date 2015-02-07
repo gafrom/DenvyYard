@@ -38,6 +38,10 @@
     <div id="flash_box"><p><%= flash[:success] %></p></div>
 <% end %>
 
+<% if flash[:error] %>
+    <div id="flash_box"><p><%= flash[:error] %></p></div>
+<% end %>
+
 <%= render 'layouts/searchTags' %>
 <%# debug(params) %>
 </body>
@@ -141,6 +145,8 @@
       	}
       <% end %>
       
+      
+
     });
     // END----------------------------------------------------3
 
@@ -184,16 +190,50 @@
     $("#return_call_btn").click(function(){
       $('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
       $('#bewitching_box').toggleClass("enabled");
+      $('#backdropMessageTop').html('Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.');
+      $('#backdropMessageBottom').html('Мы не передаём номера телефонов третьим лицам.');
+      $('#customer_idea').hide();
+      $('.backdrop_content').css('top','30%');
     });
     // END----------------------------------------------------5.1
-
-    // START--------------------------------------------------6
-    $("#return_call_form").submit(function(){
+    // START--------------------------------------------------5.2
+    $(".new_idea_link").click(function(){
       $('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
       $('#bewitching_box').toggleClass("enabled");
-      $('#bewitching_box').before('<div class="backdrop" style="z-index: 12; display: block;"><div class="loader"></div></div>');
+      $('#backdropMessageTop').html('Мы с радостью приступим к дизайну Вашей площадки,<br>основываясь на Вашей идее или истории.<br><br>За вдохновением - добро пожаловать в наш каталог площадок.<br><br>Вкратце расскажите нам о желаемом сюжете,<br>мы перезвоним Вам в ближайшее время.');
+      $('#backdropMessageBottom').html('Мы не передаём номера телефонов третьим лицам.');
+      $('#customer_idea').show();
+      $('.backdrop_content').css('top','0');
     });
-    // END----------------------------------------------------6
+    // END----------------------------------------------------5.2
+
+    // START--------------------------------------------------6.1
+    $("#return_call_form").submit(function(){
+		function formValidated() {
+    		var cpn = $('#customer_phone_number').val();
+    		if ((cpn != "") && (cpn.match(/-/) == null)) 
+    			{
+    				return true;
+    			} else 
+    			{
+    				$('#customer_phone_number').css('border-color','red');
+    				$('#flashMessage').html('Заполните корректно поле Телефон');
+    				return false;
+    			}
+      	}
+    	if (formValidated())
+    	{
+    		$('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
+    		$('#bewitching_box').before('<div class="backdrop" style="z-index: 12; display: block;"><div class="loader"></div></div>');
+		    $('#bewitching_box').toggleClass("enabled");
+      		return true;
+      	}
+      	else return false;
+    });
+    // END----------------------------------------------------6.1
+    // START--------------------------------------------------6.2
+    
+    // END----------------------------------------------------6.2
 
     // START--------------------------------------------------7.1
     $(".tooltip").mouseenter(function(){
