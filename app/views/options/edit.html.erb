@@ -27,7 +27,7 @@
 	<br>
 	<p>Или изменить/удалить существующие</p>
 		
-		<% @playground.options.each do | op | %>
+		<% @playground.options.sort_by{|e| e.created_at}.each do | op | %>
 			<%= form_for (op) do |f| %>
 			<%= f.text_field :playground_id, placeholder: "Модель", class: "editing_text_field" %>
 			<%= f.text_field :header, placeholder: "Тип ТС", class: "editing_text_field" %>
