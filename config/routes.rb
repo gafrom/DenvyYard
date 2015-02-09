@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :playgrounds
   resources :microposts
+  resources :options
 
   root to: 'static_pages#home'
 
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'xxx' => 'static_pages#xxx'
   get 'mulch' => 'static_pages#mulch'
+
+  # post 'optionsediting/:id' => 'static_pages#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

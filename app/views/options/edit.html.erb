@@ -13,24 +13,29 @@
 <% end %>
 
 
-
-<h2>ОПИСАНИЕ площадок</h2>
+<h2>ОПЦИИ площадок</h2>
 <p>Создать новую запись</p>
-  	<form action=<%= microposts_path %> method="post">
-		<input name="micropost[playground_id]" type="quantity" placeholder="ID" value=<%= params[:id] %> />
-		<input name="micropost[header]" type="text" placeholder="Header"/>
-		<input name="micropost[content]" type="text" placeholder="Content"/>
+  	<form action=<%= options_path %> method="post">
+		<input name="option[playground_id]" type="quantity" placeholder="ID" value=<%= params[:id] %> />
+		<input name="option[header]" type="text" placeholder="Header"/>
+		<input name="option[content]" type="text" placeholder="Content"/>
+		<input name="option[header2]" type="text" placeholder="Header2"/>
+		<input name="option[content2]" type="text" placeholder="Content2"/>
 		<input type="submit" value="Create new record"/>
 	</form>
 
 	<br>
 	<p>Или изменить/удалить существующие</p>
-		<% @playground.microposts.each do | mp | %>
-			<%= form_for (mp) do |f| %>
+		
+		<% @playground.options.each do | op | %>
+			<%= form_for (op) do |f| %>
 			<%= f.text_field :playground_id, placeholder: "Модель", class: "editing_text_field" %>
 			<%= f.text_field :header, placeholder: "Тип ТС", class: "editing_text_field" %>
 			<%= f.text_field :content, placeholder: "Цена", class: "editing_text_field" %>
+			<%= f.text_field :header2, placeholder: "Тип ТС", class: "editing_text_field" %>
+			<%= f.text_field :content2, placeholder: "Цена", class: "editing_text_field" %>
 			<%= f.submit "Update it" %>
-			<%= link_to "Delete", mp, method: :delete, data: {confirm: "Sure?"} %>
+			<%= link_to "Delete", op, method: :delete, data: {confirm: "Sure?"} %>
 			<% end %>
 		<% end	%>
+

@@ -18,4 +18,21 @@ class StaticPagesController < ApplicationController
   		end
   		redirect_to :back
   	end
+
+  	def create
+		@aaa = params[:option]
+		@playground = Playground.find(@aaa[:playground_id])
+	   	@option = @playground.options.create(ad_params)
+
+	    if @option.save
+	      flash[:success] = "Новая запись добавлена успешно"
+	      redirect_to 'optionsediting/2'
+	    else
+	      flash[:error] = "Не получилось добавить запись"
+	      redirect_to 'optionsediting/2'
+	    end
+  	end
+  	def ad_params   
+    	params.require(:option).permit(:playground_id, :header, :content, :header2, :content2)
+	end
 end
