@@ -552,7 +552,9 @@ footer {
 		padding-left: 65px;
 		list-style: none;
 	}
-	.option_bullet_column {
+}
+
+.option_bullet_column {
 		width: 4em;
 		text-align: center;
 		vertical-align: middle;
@@ -572,16 +574,13 @@ footer {
 	.bul-no {
 		background-position: 0 -11px;
 	}
-	.options_table {
+.options_table {
 		border-collapse: collapse;
 		
 		tr {
 			border-bottom: 1px solid rgb(156, 156, 156);
 		}
 	}
-}
-
-
 
 .drainage{
 	background-image: asset-url('icons/drainage.png');
@@ -603,6 +602,10 @@ footer {
 	}
 }
 
+.mok {
+	background-image: asset-url('icons/ok.png');
+
+}
 .iruler {
 	background-image: asset-url('icons/r.png');
 
@@ -647,14 +650,6 @@ footer {
 	font-weight: lighter;
 }
 
-.reduce_hover_area {
-	width: 100%;
-	height: 170px;
-	position: absolute;
-	left: 36px;
-}
-
-
 a.minor_link {
 	color: #929292;
 }
@@ -672,7 +667,7 @@ a.minor_link {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.75);
-	z-index: 11;
+	z-index: 13;
 	vertical-align: middle;
 	text-align: center;
 	top: 0;
@@ -859,9 +854,76 @@ a.minor_link {
 	}
 }
 
-.disabled_link {
-	&:hover {
-		border-color: grey;
+.mulch_content {
+	margin: 75px auto 10px;
+	width: 995px;
+	padding-left: 10px;
+	.box {
+		display: inline-block;
+		width: 485px;
+	}
+	ul {
+		.icon {
+			background-repeat: no-repeat;
+			width: 48px;
+			height: 48px;
+			display: inline-block;
+			position: absolute;
+			top: 20px;
+			left: 0;
+		}
+		h2 {
+			margin: 0 0 0 15px;
+			font-weight: bold;
+			color: #e15c4c;
+		}
+		margin: 5px 0;
+
+		padding: 0;
+		line-height: 1.4em;
+	}
+	li {
+		p {
+			margin-left: 15px;
+			color: grey;
+		}
+		list-style: none;
+		padding: 20px 27px 20px 50px;
+		position: relative;
+	}
+	h1 {
+		color: #3c9596;
+	}
+	h2 {
 		color: grey;
 	}
+	h3 {
+		font-family: 'ralewaylight', Calibri, Verdana;
+		color: #e15c4c;
+		margin: 20px 0 5px;
+		font-size: 130%;
+	}
+	table {
+		p {
+			color: grey;
+			margin-top: 0;
+		}
+	}
+	.stamp {
+		position: relative;
+		top: -120px;
+		left: -40px;
+	}
+}
+
+.likelink_h2 {
+	cursor: pointer;
+	display: inline;
+	&:hover {
+		border-bottom: 1px solid #D3E340;
+	}
+}
+.likelink_pic {
+	cursor: pointer;
+	
 }

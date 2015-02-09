@@ -10,7 +10,7 @@
 			<p style="margin:0;">
 				<%# <span style="letter-spacing: 0.13em;">Производство <span style="color: rgb(71, 71, 71);">|</span> продажа</span><br>
 				<span style="font-size: 71%; color: rgb(71, 71, 71);">установка игрового оборудования под ключ</span><br>	%>		
-				<span class="f_phone">в Москве </span><span style="font-size: 120%;">+7 (499) 933-53-30</span>
+				<span class="f_phone">в Москве </span><span style="font-size: 120%;">+7 (499) 390-53-30</span>
 			</p>
 		</div>
 		<div id="return_call_btn">Обратный звонок</div>
@@ -43,7 +43,6 @@
 				</div>
 				<div class="preview_description_box">
 					<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
-					<div class="reduce_hover_area"></div>
 					<ul>
 						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
 						<li><span class="iage icons tooltip" hint="Категория"></span><%= pg.text2 %></li>
@@ -63,19 +62,21 @@
 			<% Playground.where(size: "C").each do | pg | %>
 				<div class="preview_div">
 					<div class="preview_index_box">
-						<%= link_to image_tag(pg.name+"/preview.jpg", class: "preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+						<%# link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+						<%= image_tag(pg.name+"/preview.jpg") %>
 					</div>
 					<div class="preview_description_box">
-						<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
-						<div class="reduce_hover_area"></div>
-						<ul>
+						<h2>
+						<%# link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %>
+						<%= pg.name_RU %>
+						</h2>
+						<ul style="margin: 0;">
 							<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
 							<li><span class="iage icons tooltip" hint="Категория"></span><%= pg.text2 %></li>
 							<li><span class="icapacity icons tooltip" hint="Вместимость"></span><%= pg.text3 %></li>
 							<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><%= pg.text4 %></li>
 						</ul>
-						<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br>
-						<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
+						<h3 style="margin: 0; color: #3c9596;">Проект на стадии согласования технической документации</h3>
 					</div>
 				</div>
 			<% end %>
@@ -85,11 +86,10 @@
 			<h2 class="playground_post_header light_pen">Тематические многофункциональные детские игровые площадки выполненные в европейском дизайне для современных парков, жилых комплексов, усадеб, посёлков, таунхаусов, домов или дач</h2>
 			<div class="preview_div">   
 				<div class="preview_index_box">
-					<%= link_to content_tag(:div, "", class: "new_idea_picture"), "#", class: "new_idea_link" %>
+					<%= content_tag(:div, "", class: "new_idea_picture new_idea_link likelink_pic") %>
 				</div>
 				<div class="preview_description_box">
-					<h2><%= link_to "Ваша идея", "#", class: "new_idea_link" %></h2>
-					<div class="reduce_hover_area"></div>
+					<h2><%= content_tag(:h2, "Ваша идея", class: "new_idea_link likelink_h2") %></h2>
 					<ul>
 						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span>любой размер</li>
 						<li><span class="iage icons tooltip" hint="Категория"></span>для детей любого возраста</li>

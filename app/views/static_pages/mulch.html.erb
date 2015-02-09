@@ -1,0 +1,89 @@
+<header>
+	<div class="left_header_box">
+		<h2 style="display:inline;"><%= link_to 'Denvy Yard', root_path %></h2>
+		<h3 style="display:inline;"> . Современные экологичные покрытия для игровых зон</h3>
+	</div>
+	<div class="right_header_box">
+		<div class="catchy_phone">
+			<p style="margin:0;">
+				<%# <span style="letter-spacing: 0.13em;">Производство <span style="color: rgb(71, 71, 71);">|</span> продажа</span><br>
+				<span style="font-size: 71%; color: rgb(71, 71, 71);">установка игрового оборудования под ключ</span><br>	%>		
+				<span class="f_phone"></span><span style="font-size: 120%;">+7 (499) 390-53-30</span>
+			</p>
+		</div>
+		<div id="return_call_btn">Обратный звонок</div>
+	</div>
+</header>
+
+<div class="mulch_content">
+	<h1>Продажа древесной щепы и обслуживание покрытий игровых зон</h1>
+
+	<h2>С 2015 года мы освоили новую технологию "выдувания" щепы сразу на место.</h2>
+	<div>
+		<div class="box" style="margin-right: 20px;">
+			<%= image_tag('mulch/mulchBlowing.jpg') %>
+			<%= image_tag('mulch/softLanding.jpg') %>
+			<%= image_tag('mulch/eco-friendly.png', class: "stamp") %>
+		</div>
+		<div class="box">
+			<ul>
+				<li><span class="mok icon"></span><h2>№1 в США и Европе</h2>
+					<p>Большинство детских площадок на Западе и в Европе покрыты древесной щепой, потому что это безопасно, доступно и экологично.</p>
+				</li>
+				<li><span class="mok icon"></span><h2>В 5 раз дешевле покрытия из резиновой крошки</h2>
+					<p>Цена за квадратный метр от 650р!</p>
+				</li>
+				<li><span class="mok icon"></span><h2>Экологически чистый материал</h2>
+					<p>Сосновая щепа без добавок.</p>
+				</li>
+				<li><span class="mok icon"></span><h2>Травмобезопасно - лучшая амортизация падений</h2>
+					<p>Многочисленные тесты подтверждают лучшую абсорбацию ударов. Специальная технология полностью исключает занозы и царапины.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<table class="options_table">
+		<%# EMPTY row %>
+		<tr  style="border-bottom: 2px solid rgb(245, 101, 45);"><td style="padding-bottom: 30px;"></td><td></td></tr>
+		<%# EMPTY row %>
+		<tr style="border-color: rgb(240, 240, 240); "> <%# price %>
+			<td>
+				<h3 style="color: rgb(36, 36, 36);">Стоимость одного квадратного метра уложенного покрытия*, рублей</h3>
+				<p>Цена включает в себя укладку древесной щепы методом выдувания на подготовленное основание, и не включает в себя стоимость работ по подготовке основания.</p>
+			</td>
+			<td class="option_bullet_column" style="color: black;">650. -</td>
+			
+		</tr><%# price %>
+	</table>
+	<p style="color: rgb(186, 186, 186);">* Указанная цена действительна при заказе от 100 квадратных метров.</p>
+
+	<h1 style="margin: 50px 0 0;">Обслуживание игрового покрытия из древесной щепы</h1>
+	<table class="options_table">
+		<tr>
+			<td>
+				<h3>Ежемесячная инспекция игровой поверхности</h3>
+				<p>Наши специалисты визуально проверят покрытие и проведут полное выравнивание.</p>
+			</td>
+			<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Ежемесячная досыпка щепы</h3>
+				<p>Мы бесплатно досыпаем новую щепу и поддерживаем необходимую тощину слоя в соответствии с европейскими стандартами безопасности игровых поверхностей EN:1177.</p>
+			</td>
+			<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+		</tr>
+		<%# EMPTY row %>
+		<tr  style="border-bottom: 2px solid rgb(245, 101, 45);"><td style="padding-bottom: 30px;"></td><td></td></tr>
+		<%# EMPTY row %>
+		<tr style="border-color: rgb(240, 240, 240); "> <%# price %>
+			<td>
+				<h3 style="color: rgb(36, 36, 36);">Стоимость ежемесячного обслуживания*, рублей</h3>
+			</td>
+			<td class="option_bullet_column" style="color: black;">5 990. -</td>
+		</tr><%# price %>
+	</table>
+	<p style="color: rgb(186, 186, 186);"><br>* Указанная цена действительна только при заключении контракта на годовое обслуживание.</p>
+
+</div>
