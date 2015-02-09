@@ -21,6 +21,18 @@ class OptionsController < ApplicationController
 	    end
   	end
 
+
+	def update
+		@option = Option.find(params[:id])
+	    if @option.update_attributes(ad_params) 
+	      flash[:success] = "Successfuly updated" 
+	    else 
+	      flash[:error] = "Not updated"
+	    end
+	    redirect_to :back
+	end
+
+
   def destroy
   	@aaa = Option.find(params[:id])
   	@bbb = @aaa.playground
