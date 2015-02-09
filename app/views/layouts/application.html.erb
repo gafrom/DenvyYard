@@ -136,7 +136,9 @@
       var pos = "<%= params[:position] %>";
       if (pos == "materials") { $("#link3").click();};
       if (pos == "prices") { $("#link4").click();};
-      
+      if (pos == "sizeC") { $("#index_link2").click();};
+      if (pos == "newIdea") { $("#index_link3").click();};
+
 	  <% if flash[:success] %>
     	myVAR = setTimeout(flash_away, 6000);
       	function flash_away() {
