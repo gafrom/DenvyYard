@@ -39,7 +39,7 @@
 		<div class="heading_box">
 			<h2 class="playground_pre_header">Детская игровая площадка</h2>
 			<h2 class="playground_header"><%= @playground.name_RU %></h2>
-			<h2 class="playground_post_header grey_pen">для парков, жилых комплексов, усадеб</h2>
+			<h2 class="playground_post_header grey_pen"><%= if @playground.size == "A" then "для парков, жилых комплексов, усадеб" else "Для загородных домов, дач, небольших дворов" end %></h2>
 		</div>
 		<div class="capturing_box">
 			<h2 class="">Европейский дизайн</h2>
@@ -157,6 +157,7 @@
 		<div class="option_box">
 			<h2>Список опций</h2>
 			<p style="border-bottom: 2px solid; margin: 0 0 2em 0; padding-left: 50px;">Может быть изменён по согласованию</p>
+			<% if @playground.size == "A" then %>
 			<table class="options_table">
 				<tr><td></td><td class="option_bullet_column">Базовая</td><td class="option_bullet_column">Полная</td></tr>
 				<tr>
@@ -224,6 +225,64 @@
 					<td class="option_bullet_column" style="color: black;"><%= @playground.price %>. -</td>
 				</tr><%# price %>
 			</table>
+			<% else %>
+			<table class="options_table">
+				<tr><td></td><td class="option_bullet_column">Полная</td></tr>
+				<tr>
+					<td>
+						<h3>Дренажная система</h3>
+						<p>Площадка без луж сразу после дождя</p>
+					</td>
+					
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<% @playground.options.sort_by{|e| e.created_at}.each do | op | %>
+				<tr style="<%= "border-color: rgb(230, 230, 230);" if op.header2 != nil and op.header2 != "nope" %><%# BASIC OPTION %>">
+					<td>
+						<h3><%= op.header %></h3>
+						<p><%= op.content.html_safe %></p>
+					</td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<% end %>
+				<tr>
+					<td>
+						<h3>Доставка и установка</h3>
+						<p>В пределах города Москвы и ближнем подмосковье мы бесплатно привезём и установим игровую площадку.<br>Команда Denvy Yard произведёт экскавацию грунта на объекте, установит фундамент и смонтирует элементы площадки.<br>Земле-ройные работы, а также бетонирование мы осуществляем при помощи местных субподрядчиков - третьих лиц.</p>
+					</td>
+
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Наполнение песочницы песком</h3>
+						<p>В стоимость входит одноразовое наполнение песочной зоны пляжным песком высокого качества без камней.</p>
+					</td>
+
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Установка временных ограждений</h3>
+						<p>В стоимость входит установка временных ограждений на объекте до момента завершения установки площадки и игрового покрытия.<br>Данные меры необходимы, чтобы уберечь детей от возможных травм, полученных на игровой площадке при незаконченной установке.</p>
+					</td>
+
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+				</tr>
+				
+				<%# EMPTY row %>
+				<tr  style="border-bottom: 2px solid rgb(245, 101, 45);"><td style="padding-bottom: 30px;"></td><td></td></tr>
+				<%# EMPTY row %>
+
+				<tr style="border-color: rgb(240, 240, 240); "> <%# price %>
+					<td>
+						<h3 style="color: rgb(36, 36, 36);">Цена без покрытия игровой зоны*, тысяч рублей</h3>
+					</td>
+					
+					<td class="option_bullet_column" style="color: black;"><%= @playground.price %>. -</td>
+				</tr><%# price %>
+			</table>
+			<% end %>
 			<p style="color: rgb(186, 186, 186);"><br>* Указанная цена не включает стоимость игрового покрытия.<br><span style="font-size: 85%; font-style: normal;">Мы поможем Вам сделать выбор покрытия и бесплатно выступим посредником, для удобства сотрудничества «в одно окно».<br>Наши партнёры это лидеры рынка, компании, качество работы которых проверено годами.</span></p>
 			<ul>
 				<li class="drainage">

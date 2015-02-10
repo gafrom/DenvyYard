@@ -62,6 +62,24 @@
 			<% Playground.where(size: "C").each do | pg | %>
 				<div class="preview_div">
 					<div class="preview_index_box">
+						<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+					</div>
+					<div class="preview_description_box">
+						<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
+						<ul>
+							<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
+							<li><span class="iage icons tooltip" hint="Категория"></span><%= pg.text2 %></li>
+							<li><span class="icapacity icons tooltip" hint="Вместимость"></span><%= pg.text3 %></li>
+							<li><span class="idelivery icons tooltip" hint="Срок поставки"></span><%= pg.text4 %></li>
+						</ul>
+						<%= link_to "Материалы", playground_path(pg, position: "materials"), class: "minor_link" %><br>
+						<%= link_to "Комплектации и цены", playground_path(pg, position: "prices"), class: "minor_link" %>
+	 				</div>
+		 		</div>
+			<% end %>
+			<% Playground.where(size: "x").each do | pg | %>
+				<div class="preview_div">
+					<div class="preview_index_box">
 						<%# link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
 						<%= image_tag(pg.name+"/preview.jpg") %>
 					</div>
@@ -80,6 +98,7 @@
 					</div>
 				</div>
 			<% end %>
+			
 
 			<!-- YOUR IDEAS PLAYGROUND -->
 			<h1 id="index_part3">Выберите готовый эскиз или расскажите нам о своей идее</h1>
