@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
 
   post 'sending_email' => 'static_pages#sending_email'
-  get 'editing/:id' => 'static_pages#editing'
-  post 'editing/:id' => 'static_pages#create'
+  # get 'editing/:id' => 'static_pages#editing'
+  # post 'editing/:id' => 'static_pages#create'
 
-  get 'xxx' => 'static_pages#xxx'
   get 'mulch' => 'static_pages#mulch'
-
+  get 'about' => 'static_pages#about'
   # post 'optionsediting/:id' => 'static_pages#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

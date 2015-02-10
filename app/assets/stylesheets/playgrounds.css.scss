@@ -75,16 +75,21 @@ footer {
 	p {
 		color: lightgrey;
 		padding: 10px 20px;
-		margin-bottom: 0;
+		margin: 0;
 		display: block;
+		font-size: 0.8em;
 	}
 	.box {
 		display: inline-block;
 		width: 45%;
 	}
-	.googleLink {
+	.link {
+		margin: 20px;
+		color: rgb(180, 180, 180);
 		text-decoration: none;
-		color: lightgrey;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -141,7 +146,7 @@ footer {
 	width: 200px;
 	position: fixed;
 	left: 20px;
-	top: 51px;
+	top: 50px;
 	height: 100%;
 	z-index: 9;
 	color: #e15c4c;
@@ -932,5 +937,30 @@ a.minor_link {
 }
 .likelink_pic {
 	cursor: pointer;
-	
+}
+
+.about_content {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 50px 0;
+	border-bottom: 2px solid rgb(225, 72, 30);
+	background-image: asset-url('farewell.jpg');
+	background-repeat: no-repeat;
+	background-position: 0 50px;
+}
+
+.sider_about {
+	display: block;
+	position: static;
+	padding: 0 0 0 20px;
+	text-align: left;
+	.side_link {
+		&:hover {
+			background: rgba(18, 0, 207, 0.19);
+		}
+	}
+	a {
+		color: #e15c4c;
+	}
 }

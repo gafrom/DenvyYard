@@ -1,4 +1,4 @@
-<% provide(:title, @playground.name_RU) %>
+<% provide(:title, "Денви Ярд - "+@playground.name_RU) %>
 <% @digestrails = Array.new %>
 <% @playground.year.times do | d | %>
 	<% @digestrails.push(image_path(@playground.name+"/detailed/detailed_#{d}.jpg")) %>

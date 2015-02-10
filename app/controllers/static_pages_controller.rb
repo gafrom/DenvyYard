@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
 
 	end
 
+	def about
+	end
+
 	def sending_email
 		textIn = (params[:customer])[:phone_number]
 		if textIn.present? and textIn.count('-') == 0 then
