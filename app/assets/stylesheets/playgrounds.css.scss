@@ -601,19 +601,6 @@ footer {
 	background-image: asset-url('icons/box.png');
 }
 
-.home_links {
-	text-decoration: none;
-	color: #e15c4c;
-	padding: 6px 15px;
-	font-size: 90%;
-	border-right: 8px solid rgba(255, 255, 255, 0);
-	&:hover {
-		background: #f7f7f7;
-		border-color: #d3e340;
-		color: #3c9596;
-	}
-}
-
 .mok {
 	background-image: asset-url('icons/ok.png');
 
@@ -834,18 +821,71 @@ a.minor_link {
 .welcome_box {
 	text-align: center;
 	margin: 0 auto;
-	width: 600px;
-	.link_box {
-		h1 {
-			display: inline-block;
+	width: 850px;
+	padding: 30px 0;
+	.home_links {
+		text-decoration: none;
+		color: #3c9596;
+		padding: 1px 15px;
+		font-size: 90%;
+		border-bottom: 5px solid rgba(255, 255, 255, 0);
+		&:hover {			
+			border-color: #d3e340;
 		}
 	}
+	.link_box {
+		display: inline-block;
+		border-bottom: 1px solid #ACD7D8;
+		position: relative;
+		top: -26px;
+	}
+	.leftb {
 
+	}
+	.middleb {
+		display: inline-block;
+		padding: 0 15px;
+		p {
+			color: #3c9596;
+			font-family: 'latolight';
+			font-size: 15px;
+			margin: 0;
+			padding: 2px 0;
+			font-style: italic;
+		}
+	}
+	h1 {
+		color: #3c9596;
+		text-transform: uppercase;
+		text-align: center;
+		font-family: 'ralewaylight';
+		font-size: 25px;
+		margin: 0;
+		padding: 0 0 2px 0;
+		border-bottom: 1px solid #ACD7D8;
+		display: inline-block;
+		font-weight: bold;
+	}
+	h2 {
+		color: #3c9596;
+		font-family: 'ralewaylight';
+		font-size: 30px;
+		text-align: left;
+		display: inline-block;
+		letter-spacing: -1px;
+		border-top: 1px dashed grey;
+		margin: 50px 0;
+	}
+	h3 {
+		color: #3c9596;
+		margin: 0;
+		font-size: 24px;
+	}
 	.pic_box {
-		background-image: asset-url('welcome_logo.png');
+		background-image: asset-url('welcome.jpg');
 		background-repeat: no-repeat;
-		width: 405px;
-		height: 330px;
+		width: 700px;
+		height: 598px;
 		margin: 0 auto;
 	}
 
