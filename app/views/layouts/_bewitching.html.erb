@@ -2,7 +2,7 @@
 	<div class="detailed_picture_button close_btn"></div>
 	<div class="backdrop_content">
 		<p id="backdropMessageTop" class="backdrop_text"></p>
-		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email'), id: "return_call_form") do %>
+		<%= form_tag(url_for(controller: 'static_pages', action: 'sending_email'), id: "return_call_form", onclick: "yaCounter28248276.reachGoal('form_submitted'); return true;") do %>
 		  <textarea id="customer_idea" name="customer[idea]" type="text" rows="5" cols="60" placeholder="Ваша идея" class="backdrop_input"></textarea><br>
 		  <input id="customer_first_name" name="customer[first_name]" type="text" placeholder="Ваше имя" class="backdrop_input"/>
 		  <input id="customer_phone_number" name="customer[phone_number]" type="text"  placeholder="Телефон" class="backdrop_input"/>
