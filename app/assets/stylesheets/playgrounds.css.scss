@@ -72,6 +72,7 @@ footer {
 	z-index: 13;
 	background-color: white;
 	position: absolute;
+	margin-top: 40px;
 	p {
 		color: lightgrey;
 		padding: 10px 20px;
@@ -497,11 +498,11 @@ footer {
 	display: inline-block;
 }
 
-#return_call_btn {
+.return_call_btn {
 	display: inline-block;
 	white-space: nowrap;
 	padding: 5px 13px;
-	background-color: #FFFFFF;
+	background-color: white;
 	z-index: 1;
 	cursor: pointer;
 	color: #707070;
@@ -778,6 +779,7 @@ a.minor_link {
 .intext_ref {
 	cursor: pointer;
 	color: #e15c4c;
+	text-decoration: none;
 }
 
 .backdrop_content {
@@ -873,7 +875,7 @@ a.minor_link {
 		text-align: left;
 		display: inline-block;
 		letter-spacing: -1px;
-		border-top: 1px dashed grey;
+		border-top: 1px solid whitesmoke;
 		margin: 50px 0;
 	}
 	h3 {
@@ -984,10 +986,18 @@ a.minor_link {
 	text-align: center;
 	margin: 0 auto;
 	padding: 50px 0;
-	border-bottom: 2px solid rgb(225, 72, 30);
+	border-bottom: 1px solid whitesmoke;
 	background-image: asset-url('farewell.jpg');
 	background-repeat: no-repeat;
 	background-position: 0 50px;
+	color: #59585b;
+	h1 {
+		margin-top: 40px;
+	}
+	.border_div {
+		border-top: 1px solid whitesmoke;
+		margin: 30px 0 50px;
+	}
 }
 
 .sider_about {
@@ -1003,4 +1013,111 @@ a.minor_link {
 	a {
 		color: #e15c4c;
 	}
+}
+
+.whoweare {
+	text-align: center;
+	h1 {
+		margin: 20px 0 40px;
+		color: #59585b;
+	}
+	.return_call_btn {
+		border-radius: 18px;
+		border: 2px solid grey;
+		&:hover {
+			border-color: #FF6863;
+			background-color: white;
+		}
+	}
+}
+
+.profile {
+	text-align: center;
+	ul {
+		list-style: none;
+		display: block;
+	}
+	li {
+		text-align: left;
+		width: 400px;
+		display: inline-block;
+		vertical-align: top;
+		padding: 0 0 20px;
+	}
+	h2 {
+		color: #59585b;
+		font-family: 'ralewaylight';
+		font-weight: bold;
+		font-style: normal;
+		font-size: 20px;
+		line-height: 28px;
+		margin: 16px 0 0;
+	}
+	p {
+		color: #999999;
+		vertical-align: baseline;
+		font-size: 100%;
+		outline: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+	}
+	.icon {
+		background-image: asset-url('icons/icons.jpg');
+		background-repeat: no-repeat;
+		margin: 0;
+		display: block;
+	}
+	.icon-1 {
+		background-position: 0 0;
+		width: 60px;
+		height: 64px;
+	}
+	.icon-2 {
+		background-position: -56px 0;
+		width: 60px;
+		height: 64px;
+	}
+	.icon-3 {
+		background-position: -113px 0;
+		width: 68px;
+		height: 64px;
+	}
+	.icon-4 {
+		background-position: -189px 0;
+		width: 60px;
+		height: 64px;
+	}
+	.icon-5 {
+		background-position: -255px 0;
+		width: 60px;
+		height: 64px;
+
+	}
+	.icon-6 {
+		background-position: 0 -60px;
+		width: 100px;
+		height: 64px;
+	}
+	.icon-7 {
+		background-position: -100px -60px;
+		width: 73px;
+		height: 64px;
+
+	}
+	.icon-8 {
+		background-position: -188px -61px;
+		width: 64px;
+		height: 64px;
+	}
+	.icon-9 {
+		background-position: -256px -62px;
+		width: 64px;
+		height: 64px;
+	}
+}
+
+.emailto {
+	color: grey;
+	font-style: italic;
 }
