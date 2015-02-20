@@ -220,7 +220,7 @@ footer {
 	}
 }
 
-.content {
+#show_content {
 	position: relative;
 	margin-left: 180px;
 	top: 50px;
@@ -236,7 +236,7 @@ footer {
 	}
 }
 
-.index_content {
+#index_content {
 	position: relative;
 	top: 70px;
 	padding-bottom: 70px;
@@ -832,7 +832,7 @@ a.minor_link {
 	}
 }
 
-.welcome_box {
+#welcome_box {
 	text-align: center;
 	margin: 0 auto;
 	width: 850px;
@@ -920,7 +920,7 @@ a.minor_link {
 	}
 }
 
-.mulch_content {
+#mulch_content {
 	margin: 75px auto 10px;
 	width: 995px;
 	padding-left: 10px;
@@ -1027,7 +1027,7 @@ a.minor_link {
 	}
 }
 
-.whoweare {
+#whoweare {
 	text-align: center;
 	h1 {
 		margin: 20px 0 40px;

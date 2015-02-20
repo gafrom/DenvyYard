@@ -176,14 +176,14 @@
     // END----------------------------------------------------4.3
     // START--------------------------------------------------4.X
     $(".close_btn").click(function(){
-      $('.content,header,.sider_show,.sider_index,.index_content,.mulch_content').removeClass("blurred");
+      $('#welcome_box,#whoweare,#show_content,#index_content,#mulch_content,#about_content,header,footer,.sider_show,.sider_index').removeClass("blurred");
       $('.backdrop').removeClass("enabled");
     });
     // END----------------------------------------------------4.X
 
     // START--------------------------------------------------5.1
     $(".return_call_btn").click(function(){
-      $('.content,header,.sider_show,.sider_index,.index_content,.mulch_content').toggleClass("blurred");
+      $('#welcome_box,#whoweare,#show_content,#index_content,#mulch_content,#about_content,header,footer,.sider_show,.sider_index').toggleClass("blurred");
       $('#bewitching_box').toggleClass("enabled");
       $('#backdropMessageTop').html('Введите Ваше имя и телефон.<br>Мы перезвоним Вам в ближайшее время.');
       $('#backdropMessageBottom').html('Мы не передаём номера телефонов третьим лицам.');
@@ -193,7 +193,7 @@
     // END----------------------------------------------------5.1
     // START--------------------------------------------------5.2
     $(".new_idea_link").click(function(){
-      $('.content,header,.sider_show,.sider_index,.index_content').toggleClass("blurred");
+      $('#index_content,header,footer,.sider_show,.sider_index').toggleClass("blurred");
       $('#bewitching_box').toggleClass("enabled");
       $('#backdropMessageTop').html('Мы с радостью приступим к дизайну Вашей площадки,<br>основываясь на Вашей идее или истории.<br><br>За вдохновением - добро пожаловать в наш каталог площадок.<br><br>Вкратце расскажите нам о желаемом сюжете,<br>мы перезвоним Вам в ближайшее время.');
       $('#backdropMessageBottom').html('Мы не передаём номера телефонов третьим лицам.');
