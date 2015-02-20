@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :playgrounds
   # resources :microposts
-  resources :options
+  # resources :options
 
   root to: 'static_pages#home'
 
