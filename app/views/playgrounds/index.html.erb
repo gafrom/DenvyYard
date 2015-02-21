@@ -1,4 +1,5 @@
 <% provide(:title, "Готовые эскизы площадок - Денви Ярд") %>
+<% provide(:metaDescription, "Каталог готовых тематических детских игровых площадок Денви Ярд. Здесь представлены площадки как большого размера (для парков, жилых комплексов, усадеб, придворовых территорий) так и небольшие площадки для частных домов и дач. Европейский дизайн подчеркнёт живописный сюжет жилого комплекса премиум класса, парка или загородного дома, дачи. Безопасность соответствует международным стандартам. Только натуральные материалы и качественные комплектующие.") %>
 
 <header>
 	<div class="left_header_box">
@@ -39,7 +40,7 @@
 			<% Playground.where(size: "A").each do | pg | %>
 			<div class="preview_div">
 				<div class="preview_index_box">
-					<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+					<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image", alt: "Денви ярд | Тематическая детская игровая площадка для парков - "+pg.name_RU), playground_path(id: pg.id) %>
 				</div>
 				<div class="preview_description_box">
 					<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
@@ -62,7 +63,7 @@
 			<% Playground.where(size: "C").each do | pg | %>
 				<div class="preview_div">
 					<div class="preview_index_box">
-						<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+						<%= link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image", alt: "Денви ярд | Тематическая детская игровая площадка для загородного дома, дачи - "+pg.name_RU), playground_path(id: pg.id) %>
 					</div>
 					<div class="preview_description_box">
 						<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
@@ -81,7 +82,7 @@
 				<div class="preview_div">
 					<div class="preview_index_box">
 						<%# link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
-						<%= image_tag(pg.name+"/preview.jpg") %>
+						<%= image_tag(pg.name+"/preview.jpg", alt: "Денви ярд | Тематическая детская игровая площадка - "+pg.name_RU) %>
 					</div>
 					<div class="preview_description_box">
 						<h2>
