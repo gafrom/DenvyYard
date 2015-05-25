@@ -1148,26 +1148,23 @@ a.minor_link {
 	margin-top: 15px;
 	.someItem {
 		position: absolute;
-		display: none;
+		top: 0;
+		display: block;
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%;
-		-webkit-transform: .6s ease-in-out;
+		-webkit-transition: -webkit-transform .6s ease-in-out;
   		-o-transition: -o-transform .6s ease-in-out;
   		transition: transform .6s ease-in-out;
         }
 	.here {
-		display: block;
 		transform: translate(0);
-		top: 0;
 	}
 	.left {
-		display: block;
 		transform: translate(-100%);
 	}
 	.right {
-				display: block;
-		-webkit-transform: none;
+		-webkit-transition: none;
   		-o-transition: none;
   		transition: none;
 		transform: translate(100%);
