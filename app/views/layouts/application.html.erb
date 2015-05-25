@@ -14,7 +14,7 @@
 
 
 <body>
-<%= render 'layouts/yandexMetrika' %>
+<%# render 'layouts/yandexMetrika' %>
 
 <%= yield %>
 
@@ -35,8 +35,10 @@
 </body>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="<%= javascript_path('jquery') %>" type="text/javascript"></script>
 <script src="<%= javascript_path('jquery.inputmask') %>" type="text/javascript"></script>
+<script src="<%= javascript_path('jquery.mobile.custom.min') %>" type="text/javascript"></script>
+
 <script>
 
 //=START================================================== jQuery ===============================================================================
@@ -222,8 +224,43 @@
     });
     // END----------------------------------------------------6.1
     // START--------------------------------------------------6.2
-    
+    $(".someItem").click(function(){
+    	
+	  var n1 = parseInt($(this).attr("count"));
+	  var n2 = 0;
+	  var n3 = 0;
+      n1<4? n2 = n1 + 1 : n2 = 1;
+      n2<4? n3 = n2 + 1 : n3 = 1;
+
+    	$(this).toggleClass("here");
+    	$(this).toggleClass("left");
+
+    	$("[count="+n2+"]").toggleClass("here");
+    	$("[count="+n2+"]").toggleClass("right");
+    	$("[count="+n3+"]").addClass("right");
+    	$("[count="+n3+"]").removeClass("left");
+
+    });
     // END----------------------------------------------------6.2
+
+    // START--------------------------------------------------6.3
+  $(".someItem").swipeleft(function(){
+      var n1 = parseInt($(this).attr("count"));
+	  var n2 = 0;
+	  var n3 = 0;
+      n1<4? n2 = n1 + 1 : n2 = 1;
+      n2<4? n3 = n2 + 1 : n3 = 1;
+
+    	$(this).toggleClass("here");
+    	$(this).toggleClass("left");
+
+    	$("[count="+n2+"]").toggleClass("here");
+    	$("[count="+n2+"]").toggleClass("right");
+    	$("[count="+n3+"]").addClass("right");
+    	$("[count="+n3+"]").removeClass("left");
+    });   
+    // END----------------------------------------------------6.3
+
 
     // START--------------------------------------------------7.1
     $(".tooltip").mouseenter(function(){

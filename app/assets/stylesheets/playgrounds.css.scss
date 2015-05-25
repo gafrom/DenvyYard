@@ -886,11 +886,11 @@ a.minor_link {
 		color: #e15c4c;
 		font-family: 'ralewaylight';
 		font-size: 30px;
-		text-align: left;
+		text-align: center;
 		display: inline-block;
 		letter-spacing: -1px;
 		border-top: 1px solid whitesmoke;
-		margin: 50px 0;
+		margin: 0;
 	}
 	h3 {
 		color: #3c9596;
@@ -1136,4 +1136,40 @@ a.minor_link {
 .emailto {
 	color: grey;
 	font-style: italic;
+}
+
+
+
+
+#eye-CatchingSlides {
+	position: relative;
+	height: 450px;
+	overflow: hidden;
+	margin-top: 15px;
+	.someItem {
+		position: absolute;
+		display: none;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		-webkit-transform: .6s ease-in-out;
+  		-o-transition: -o-transform .6s ease-in-out;
+  		transition: transform .6s ease-in-out;
+        }
+	.here {
+		display: block;
+		transform: translate(0);
+		top: 0;
+	}
+	.left {
+		display: block;
+		transform: translate(-100%);
+	}
+	.right {
+				display: block;
+		-webkit-transform: none;
+  		-o-transition: none;
+  		transition: none;
+		transform: translate(100%);
+	}
 }
