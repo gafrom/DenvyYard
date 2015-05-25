@@ -14,7 +14,7 @@
 
 
 <body>
-<%# render 'layouts/yandexMetrika' %>
+<%= render 'layouts/yandexMetrika' %>
 
 <%= yield %>
 
@@ -223,41 +223,37 @@
       	else return false;
     });
     // END----------------------------------------------------6.1
-    // START--------------------------------------------------6.2
-    $(".someItem").click(function(){
-    	
-	  var n1 = parseInt($(this).attr("count"));
-	  var n2 = 0;
-	  var n3 = 0;
-      n1<6? n2 = n1 + 1 : n2 = 1;
-      n2<6? n3 = n2 + 1 : n3 = 1;
 
-    	$(this).toggleClass("here");
-    	$(this).toggleClass("left");
-
+    // START--------------------------------------------------6.2 - Initiation
+	function goleft(element) {
+		var n1 = parseInt($(element).attr("count"));
+	    var n2 = 0;
+	    var n3 = 0;
+        n1<6? n2 = n1 + 1 : n2 = 1;
+        n2<6? n3 = n2 + 1 : n3 = 1;
+    	$(element).toggleClass("here");
+    	$(element).toggleClass("left");
     	$("[count="+n2+"]").toggleClass("here");
     	$("[count="+n2+"]").toggleClass("right");
     	$("[count="+n3+"]").addClass("right");
     	$("[count="+n3+"]").removeClass("left");
+	}
 
+	setInterval(function() {
+    	//if(isHover) return;  // do nothing!
+    	goleft($(".here"));
+	}, 4000);
+    // END----------------------------------------------------6.2 - Initiation
+
+    // START--------------------------------------------------6.2
+    $(".someItem").click(function(){
+    	goleft(this);
     });
     // END----------------------------------------------------6.2
 
     // START--------------------------------------------------6.3
-  $(".someItem").swipeleft(function(){
-      var n1 = parseInt($(this).attr("count"));
-	  var n2 = 0;
-	  var n3 = 0;
-      n1<6? n2 = n1 + 1 : n2 = 1;
-      n2<6? n3 = n2 + 1 : n3 = 1;
-
-    	$(this).toggleClass("here");
-    	$(this).toggleClass("left");
-
-    	$("[count="+n2+"]").toggleClass("here");
-    	$("[count="+n2+"]").toggleClass("right");
-    	$("[count="+n3+"]").addClass("right");
-    	$("[count="+n3+"]").removeClass("left");
+    $(".someItem").swipeleft(function(){
+        goleft(this);
     });   
     // END----------------------------------------------------6.3
 
