@@ -1158,15 +1158,21 @@ a.minor_link {
   		transition: transform .6s ease-in-out;
         }
 	.here {
+		-webkit-transform: translate(0);
+		-o-transform: translate(0);
 		transform: translate(0);
 	}
 	.left {
+		-webkit-transform: translate(-100%);
+		-o-transform: translate(-100%);
 		transform: translate(-100%);
 	}
 	.right {
 		-webkit-transition: none;
   		-o-transition: none;
   		transition: none;
+  		-webkit-transform: translate(100%);
+		-o-transform: translate(100%);
 		transform: translate(100%);
 	}
 }
