@@ -1156,6 +1156,7 @@ a.minor_link {
 		-webkit-transition: -webkit-transform .6s ease-in-out;
   		-o-transition: -o-transform .6s ease-in-out;
   		transition: transform .6s ease-in-out;
+	  		
         }
 	.here {
 		-webkit-transform: translate(0);
@@ -1168,11 +1169,14 @@ a.minor_link {
 		transform: translate(-100%);
 	}
 	.right {
-		-webkit-transition: none;
-  		-o-transition: none;
-  		transition: none;
   		-webkit-transform: translate(100%);
 		-o-transform: translate(100%);
 		transform: translate(100%);
 	}
+	.noeffect {
+		-webkit-transition: none;
+		-o-transition: none;
+		transition: none;
+	}
+	
 }

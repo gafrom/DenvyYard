@@ -224,26 +224,59 @@
     });
     // END----------------------------------------------------6.1
 
-    // START--------------------------------------------------6.2 - Initiation
+    // START--------------------------------------------------6.2 - Declaration
 	function goleft(element) {
-		var n1 = parseInt($(element).attr("count"));
-	    var n2 = 0;
-	    var n3 = 0;
-        n1<6? n2 = n1 + 1 : n2 = 1;
-        n2<6? n3 = n2 + 1 : n3 = 1;
-    	$(element).toggleClass("here");
-    	$(element).toggleClass("left");
-    	$("[count="+n2+"]").toggleClass("here");
-    	$("[count="+n2+"]").toggleClass("right");
-    	$("[count="+n3+"]").addClass("right");
-    	$("[count="+n3+"]").removeClass("left");
+		var n = 0;
+		if (typeof element === 'undefined') { n = 1 } else { n = parseInt($(element).attr("count")); }
+	    var nl = 0;
+	    var nr = 0;
+	    var nr2 = 0;
+	    var nl2 = 0;
+        n<6? nr = n + 1 : nr = 1;
+        nr<6? nr2 = nr + 1 : nr2 = 1;
+        n>1? nl = n - 1 : nl = 6;
+        nl>1? nl2 = nl - 1 : nl2 = 6;
+
+        $("[count="+nr2+"],[count="+nl2+"]").addClass("noeffect");
+    	$("[count="+nr+"],[count="+n+"],[count="+nl+"]").removeClass("noeffect");
+
+    	$(element).removeClass("here");
+    	$(element).addClass("left");
+    	$("[count="+nr+"]").addClass("here");
+    	$("[count="+nr+"]").removeClass("right");
+    	
+    	$("[count="+nr2+"]").addClass("right");
+    	$("[count="+nr2+"]").removeClass("left");
+	}
+
+	function goright(element) {
+		var n = 0;
+		if (typeof element === 'undefined') { n = 1 } else { n = parseInt($(element).attr("count")); }
+	    var nl = 0;
+	    var nr = 0;
+	    var nr2 = 0;
+	    var nl2 = 0;
+        n<6? nr = n + 1 : nr = 1;
+        nr<6? nr2 = nr + 1 : nr2 = 1;
+        n>1? nl = n - 1 : nl = 6;
+        nl>1? nl2 = nl - 1 : nl2 = 6;
+        
+        $("[count="+nr2+"],[count="+nl2+"]").addClass("noeffect");
+    	$("[count="+nr+"],[count="+n+"],[count="+nl+"]").removeClass("noeffect");
+    	
+    	$(element).removeClass("here");
+    	$(element).addClass("right");
+    	$("[count="+nl+"]").addClass("here");
+    	$("[count="+nl+"]").removeClass("left");
+    	$("[count="+nl2+"]").addClass("left");
+    	$("[count="+nl2+"]").removeClass("right");
 	}
 
 	setInterval(function() {
     	//if(isHover) return;  // do nothing!
     	goleft($(".here"));
 	}, 4000);
-    // END----------------------------------------------------6.2 - Initiation
+    // END----------------------------------------------------6.2 - Declaration
 
     // START--------------------------------------------------6.2
     $(".someItem").click(function(){
@@ -254,6 +287,9 @@
     // START--------------------------------------------------6.3
     $(".someItem").swipeleft(function(){
         goleft(this);
+    });
+    $(".someItem").swiperight(function(){
+        goright(this);
     });   
     // END----------------------------------------------------6.3
 
