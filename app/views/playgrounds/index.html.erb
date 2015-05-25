@@ -81,7 +81,7 @@
 			<% Playground.where(size: "x").each do | pg | %>
 				<div class="preview_div">
 					<div class="preview_index_box">
-						<%# link_to image_tag(pg.name+"/preview.jpg", class: "index_preview_image"), playground_path(id: pg.id), class: "", style: "" %>
+
 						<%= image_tag(pg.name+"/preview.jpg", alt: "Денви ярд | Тематическая детская игровая площадка - "+pg.name_RU) %>
 					</div>
 					<div class="preview_description_box">
