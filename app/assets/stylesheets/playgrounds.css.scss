@@ -1190,6 +1190,9 @@ a.minor_link {
 	width: 130px;
 	height: 130px;
 	text-align: center;
+	-webkit-transform: rotate(20deg);
+	-o-transform: rotate(20deg);
+	-ms-transform: rotate(20deg);
 	transform: rotate(20deg);
 	padding: 15px;
 	left: 170px;
