@@ -1180,3 +1180,20 @@ a.minor_link {
 	}
 	
 }
+
+.brightspot {
+	position: absolute;
+	background-color: orangered;
+	color: white;
+	font-size: 27px;
+	border-radius: 200px;
+	width: 130px;
+	height: 130px;
+	text-align: center;
+	transform: rotate(20deg);
+	padding: 15px;
+	left: 170px;
+	p {
+		margin-top: 29px;
+	}
+}

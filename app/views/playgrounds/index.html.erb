@@ -44,6 +44,9 @@
 				</div>
 				<div class="preview_description_box">
 					<h2><%= link_to pg.name_RU,playground_path(id: pg.id), class: "", style: "" %></h2>
+					<% if pg.name == "Construction_Site" %>
+						<div class="brightspot"><p>В наличии на складе</p></div>
+					<% end %>
 					<ul>
 						<li><span class="iruler icons tooltip" hint="Размер игровой зоны"></span><%= pg.text1 %></li>
 						<li><span class="iage icons tooltip" hint="Возрастная категория"></span><%= pg.text2 %></li>

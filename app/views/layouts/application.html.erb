@@ -225,9 +225,11 @@
     // END----------------------------------------------------6.1
 
     // START--------------------------------------------------6.2 - Declaration
-	function goleft(element) {
-		var n = 0;
-		if (typeof element === 'undefined') { n = 1 } else { n = parseInt($(element).attr("count")); }
+
+
+
+	function goleft() {
+		var n = parseInt($(".here").attr("itemnumber"));
 	    var nl = 0;
 	    var nr = 0;
 	    var nr2 = 0;
@@ -237,21 +239,21 @@
         n>1? nl = n - 1 : nl = 6;
         nl>1? nl2 = nl - 1 : nl2 = 6;
 
-        $("[count="+nr2+"],[count="+nl2+"]").addClass("noeffect");
-    	$("[count="+nr+"],[count="+n+"],[count="+nl+"]").removeClass("noeffect");
+		for (i = 1; i < 7; i++) { 
+ 			if (i==nr||i==n) { $("[itemnumber="+i+"]").removeClass("noeffect") } else { $("[itemnumber="+i+"]").addClass("noeffect")}
+		}
 
-    	$(element).removeClass("here");
-    	$(element).addClass("left");
-    	$("[count="+nr+"]").addClass("here");
-    	$("[count="+nr+"]").removeClass("right");
+    	$("[itemnumber="+n+"]").removeClass("here");
+    	$("[itemnumber="+n+"]").addClass("left");
+    	$("[itemnumber="+nr+"]").addClass("here");
+    	$("[itemnumber="+nr+"]").removeClass("right");
     	
-    	$("[count="+nr2+"]").addClass("right");
-    	$("[count="+nr2+"]").removeClass("left");
+    	$("[itemnumber="+nr2+"]").addClass("right");
+    	$("[itemnumber="+nr2+"]").removeClass("left");
 	}
 
-	function goright(element) {
-		var n = 0;
-		if (typeof element === 'undefined') { n = 1 } else { n = parseInt($(element).attr("count")); }
+	function goright() {
+		var n = parseInt($(".here").attr("itemnumber"));
 	    var nl = 0;
 	    var nr = 0;
 	    var nr2 = 0;
@@ -260,36 +262,37 @@
         nr<6? nr2 = nr + 1 : nr2 = 1;
         n>1? nl = n - 1 : nl = 6;
         nl>1? nl2 = nl - 1 : nl2 = 6;
-        
-        $("[count="+nr2+"],[count="+nl2+"]").addClass("noeffect");
-    	$("[count="+nr+"],[count="+n+"],[count="+nl+"]").removeClass("noeffect");
+
+     	for (i = 1; i < 7; i++) { 
+ 			if (i==nl||i==n) { $("[itemnumber="+i+"]").removeClass("noeffect") } else { $("[itemnumber="+i+"]").addClass("noeffect")}
+		}
     	
-    	$(element).removeClass("here");
-    	$(element).addClass("right");
-    	$("[count="+nl+"]").addClass("here");
-    	$("[count="+nl+"]").removeClass("left");
-    	$("[count="+nl2+"]").addClass("left");
-    	$("[count="+nl2+"]").removeClass("right");
+    	$("[itemnumber="+n+"]").removeClass("here");
+    	$("[itemnumber="+n+"]").addClass("right");
+    	$("[itemnumber="+nl+"]").addClass("here");
+    	$("[itemnumber="+nl+"]").removeClass("left");
+    	$("[itemnumber="+nl2+"]").addClass("left");
+    	$("[itemnumber="+nl2+"]").removeClass("right");
 	}
 
 	setInterval(function() {
     	//if(isHover) return;  // do nothing!
-    	goleft($(".here"));
+    	goleft();
 	}, 5000);
     // END----------------------------------------------------6.2 - Declaration
 
     // START--------------------------------------------------6.2
-    $(".someItem").click(function(){
-    	goleft(this);
+    $("#eye-CatchingSlides").click(function(){
+    	goleft();
     });
     // END----------------------------------------------------6.2
 
     // START--------------------------------------------------6.3
-    $(".someItem").swipeleft(function(){
-        goleft(this);
+    $("#eye-CatchingSlides").on("swipeleft",function(){
+        goleft();
     });
-    $(".someItem").swiperight(function(){
-        goright(this);
+    $("#eye-CatchingSlides").on("swiperight",function(){
+        goright();
     });   
     // END----------------------------------------------------6.3
 
