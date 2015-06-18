@@ -166,7 +166,7 @@
 						<h3>Дренажная система</h3>
 						<p>Площадка без луж сразу после дождя</p>
 					</td>
-					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
+					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-no") %></td>
 					<td class="option_bullet_column"><%= content_tag(:div, "", class: "bullet-icon bul-ok") %></td>
 				</tr>
 				<% @playground.options.sort_by{|e| e.created_at}.each do | op | %>
