@@ -30,7 +30,7 @@
 	<%= content_tag(:div, content_tag(:p, "Концепция", class: "p_side_link"), class: "side_link", id: "link1") %>
 	<%= content_tag(:div, content_tag(:p, "Подробно о площадке", class: "p_side_link", style: "top:10%;"), class: "side_link", id: "link2") %>
 	<%= content_tag(:div, content_tag(:p, "Материалы", class: "p_side_link"), class: "side_link", id: "link3") %>
-	<%= content_tag(:div, content_tag(:p, "Комплектации и цены", class: "p_side_link", style: "top:10%;"), class: "side_link", id: "link4") %>
+	<%= content_tag(:div, content_tag(:p, "Опции", class: "p_side_link", style: "top:10%;"), class: "side_link", id: "link4") %>
 </div>
 
 </div>
@@ -220,10 +220,10 @@
 
 				<tr style="border-color: rgb(240, 240, 240); "> <%# price %>
 					<td>
-						<h3 style="color: rgb(36, 36, 36);">Цена без покрытия игровой зоны*, тысяч рублей</h3>
+						<h3 style="color: rgb(36, 36, 36);">Более подробную информацию о комплектациях и ценах уточняйте по телефону +7 (499) 390-53-30 или электронной почте <%= mail_to('info@denvyyard.com') %></h3>
 					</td>
-					<td class="option_bullet_column" style="color: black;"><%= @playground.min_price %>. -</td>
-					<td class="option_bullet_column" style="color: black;"><%= @playground.price %>. -</td>
+					<td class="option_bullet_column" style="color: black;"><%# @playground.min_price %><%#. -%></td>
+					<td class="option_bullet_column" style="color: black;"><%# @playground.price %><%#. -%></td>
 				</tr><%# price %>
 			</table>
 			<% else %>
@@ -276,8 +276,9 @@
 					<td class="option_bullet_column" style="color: black;"><%= @playground.price %>. -</td>
 				</tr><%# price %>
 			</table>
+			<p style="color: rgb(186, 186, 186);"><br>* Указанная цена не включает стоимость игрового покрытия.<br></p>
 			<% end %>
-			<p style="color: rgb(186, 186, 186);"><br>* Указанная цена не включает стоимость игрового покрытия.<br><span style="font-size: 85%; font-style: normal;">Мы поможем Вам сделать выбор покрытия и бесплатно выступим посредником, для удобства сотрудничества «в одно окно».<br>Наши партнёры это лидеры рынка, компании, качество работы которых проверено годами.</span></p>
+			<p style="color: rgb(186, 186, 186);"><br><span style="font-size: 85%; font-style: normal;">Мы поможем Вам сделать выбор покрытия и бесплатно выступим посредником, для удобства сотрудничества «в одно окно».<br>Наши партнёры это лидеры рынка, компании, качество работы которых проверено годами.</span></p>
 			<ul>
 				<li class="drainage">
 					
