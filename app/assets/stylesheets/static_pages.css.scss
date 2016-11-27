@@ -1,3 +1,35 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.welcome {
+  background: no-repeat asset-url('DSC08945.JPG');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  .nav {
+    color: white;
+    li {
+      margin: 100px;
+    }
+
+    .btn {
+      font-size: 200%;
+      color: white;
+      border: solid 2px white;
+      border-radius: 10px;
+      background: none;
+      transition: background 1s, color 1s;
+      transition-timing-function: ease-out;
+      
+
+      &:hover {
+        background: white;
+        color: black;
+
+      }
+    }
+    
+  }
+}
